@@ -1,2 +1,2 @@
-# IslamS
+# islam
  My personal website
