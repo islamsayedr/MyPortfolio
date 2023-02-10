@@ -31,12 +31,12 @@
 <body>
     <!-- Header -->
     <header class="header">
-        <a href="#ndex.html"><img src="./icons/logo.png" alt="Islam Sayed Logo"></a>
-        <nav>
-            <ul>
-                <li><a href="#">PORTFOLIO</a></li>
-                <li><a href="#">ABOUT</a></li>
-                <li><a href="#">+20 109 2124 608</a></li>
+        <a href="#ndex.html"><img src="./icons/logo.png" class="logo" alt="Islam Sayed Logo"></a>
+        <nav class="header-nav">
+            <ul class="nav-links">
+                <li class="link"><a href="#">PORTFOLIO</a></li>
+                <li class="link"><a href="#">ABOUT</a></li>
+                <li class="link"><a href="#">+20 109 2124 608</a></li>
             </ul>
         </nav>
     </header>
@@ -45,47 +45,45 @@
         <!-- hero section -->
         <section class="hero-section">
             <h1 class="h1">Islam S<i class="dot">.</i><br>Product Designer </h1>
-            <p>Welcome to my online space, My name is Islam Sayed,
+            <p class="hero-txt">Welcome to my online space, My name is Islam Sayed,
                 UI/UX designer based in Egypt.
             </p>
-            <button type="button">download my resume</button>
-            <img src="./imgs/profile-img.png" alt="Islam Sayed Photo">
+            <button class="btn" id="download-my-cv" type="button">download my resume</button>
+            <img src="./imgs/profile-img.png" class="hero-img" alt="Islam Sayed Photo">
         </section>
         <!-- portfolio section -->
         <section class="portfolio-section">
             <ul class="filter">
-                <li>all</li>
-                <li>visual design</li>
-                <li>ui/ux design</li>
-                <li>graphic design</li>
-                <li>branding</li>
+                <li class="link">all</li>
+                <li class="link">visual design</li>
+                <li class="link">ui/ux design</li>
+                <li class="link">graphic design</li>
+                <li class="link">branding</li>
             </ul>
-            <div class="portfolio-items">
-                <img src="./imgs/portfolio-item-1.jpg" alt="dal">
-                <img src="./imgs/portfolio-item-2.jpg" alt="shipin">
-                <img src="./imgs/portfolio-item-3.jpg" alt="tourvia">
-                <img src="./imgs/portfolio-item-4.jpg" alt="levape">
+            <div class="portfolio-items-containers">
+                <img src="./imgs/portfolio-item-1.jpg" class="item" alt="dal">
+                <img src="./imgs/portfolio-item-2.jpg" class="item" alt="shipin">
+                <img src="./imgs/portfolio-item-3.jpg" class="item" alt="tourvia">
+                <img src="./imgs/portfolio-item-4.jpg" class="item" alt="levape">
             </div>
         </section>
         <!-- feedback section -->
         <section class="feedback">
-            <p>Islam has created professional, tailor-made design. He has a lot of creativity and ideas, moreover communication with him is excellent. I really recommend cooperation with Islam, I'm looking forward to have more jobs to work with this professional.</p>
-            <img src="./icons/pl.svg" alt="Poland">
-            <i>Matt G.</i>
-            <img src="./icons/star.svg" alt="">
-            <i>5.0</i>
+            <p class="client-comment">Islam has created professional, tailor-made design. He has a lot of creativity and ideas, moreover communication with him is excellent. I really recommend cooperation with Islam, I'm looking forward to have more jobs to work with this professional.</p>
+            <img src="./icons/pl.svg" class="flag" alt="Poland">
+            <i class="client-name">Matt G.</i>
+            <img src="./icons/star.svg" class="star-icon" alt="">
+            <i class="rating-value">5.0</i>
         </section>
     </main>
     <!-- footer section -->
-    <footer>
-        <div class="logo">
-            <a href="#"><img src="./icons/logo.png" alt="Islam Sayed Logo"></a>
-        </div>
-        <small>All right reserved by Islam 2023</small>
-        <ul>
-            <li>Islamsayedr@gmail.com</li>
-            <li><a href="linkedin.com/in/geosid40">LINKEDIN</a></li>
-            <li><a href="be.net/geosid40">BEHANCE</a></li>
+    <footer class="footer">
+        <a href="#"><img src="./icons/logo.png" class="logo" alt="Islam Sayed Logo"></a>
+        <small class="copyrights">All right reserved by Islam 2023</small>
+        <ul class="footer-links">
+            <li class="link">Islamsayedr@gmail.com</li>
+            <li class="link"><a href="linkedin.com/in/geosid40">LINKEDIN</a></li>
+            <li class="link"><a href="be.net/geosid40">BEHANCE</a></li>
         </ul>
     </footer>
     <script src="./js/script.js"></script>
