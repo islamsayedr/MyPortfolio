@@ -19,6 +19,7 @@ li{
 a{
   text-decoration: none;
   color: #606060;
+  text-transform:uppercase
 }
 .link:hover{
   color: #8D0130;
@@ -104,6 +105,10 @@ h1{
   align-self: center; */
   width: 50%;
   padding: 10px;
+}
+.item:hover{
+	transform: rotateY(189deg);
+	transition: .3s;
 }
 .item img{
   width: 100%;
