@@ -35,17 +35,19 @@ h1{
   max-width: 1200px;
 }
 .btn{
-  display: inline-block;
+  display: block;
   padding: 8px 16px;
   border: 1px solid #8D0130;
   color: #8D0130;
-  margin: 8px 0;
+  /* margin: 8px 0; */
+  width: -moz-fit-content;
+  width: fit-content;
+
 }
 .btn:hover{
   background-color: #8D0130;
   color: #E7E3D7;
 }
-/* header start */
 .flex-container {
   display: flex;
   align-items: center;
@@ -53,11 +55,6 @@ h1{
   padding: 22px 0;
   flex-wrap: wrap;
 }
-.header{
-  border-bottom: 1px solid #606060;
-}
-/* end */
-/* hero start */
 .grid-container {
   display: grid;
   grid-template-columns: repeat(12, 1fr);
@@ -65,19 +62,29 @@ h1{
   column-gap: 20px;
   /* row-gap: 150px; */
 }
+/* header start */
+.header{
+  border-bottom: 1px solid #606060;
+}
+/* end */
+/* hero start */
 .hero{
   background-color: #E1E2E4;
+  margin-bottom: 80px;
 }
 .hero-content{
-  grid-column: 1 / 7;
-  justify-self: center;
-  align-self: center;
+  grid-column: 7 / 13;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: left;
+  gap: 16px;
 }
 .dot{
   color: #8D0130;;
 }
 .hero-img{
-  grid-column: 7 / 13;
+  grid-column: 1 / 7;
   justify-self: center;
   align-self: center;
 }
@@ -87,6 +94,9 @@ h1{
 }
 /* end */
 /* portfolio start */
+.portfolio{
+  margin-bottom: 80px;
+}
 .filter{
   grid-column: 1 / 13;
   justify-self: start;
@@ -94,28 +104,46 @@ h1{
 }
 .item-container{
   grid-column: 1 / 13;
-  justify-self: start;
-  align-self: center;
+  /* justify-self: center;
+  align-self: center; */
   display: flex;
+  justify-content:space-between;
   flex-wrap: wrap;
+  gap: 20px;
 }
 .item{
   /* grid-column: 1 / 7;
   justify-self: center;
   align-self: center; */
-  width: 50%;
-  padding: 10px;
+  width: 49%;
+  /* padding: 10px; */
 }
-.item:hover{
-	transform: rotateY(189deg);
-	transition: .3s;
+@media (max-width: 768px) {
+  .hero-content{
+    grid-column: 1 / 13;
+    padding-bottom: 40px;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+  }
+  .hero-img{
+    grid-column: 1 / 13;
+  }
+  .item{
+    width: 100%;
+    padding: 0px;
+  }
 }
 .item img{
   width: 100%;
   height: auto;
 }
 /* end */
+
 /* feedback start */
+.feedback{
+  margin-bottom:80px;
+}
 .card{
   grid-column: 2 / 12;
   justify-self: start;
@@ -133,6 +161,7 @@ h1{
   padding: 16px 0;
 }
 /* end */
+
 /* footer start */
 .footer{
   border-top: 1px solid #606060;
