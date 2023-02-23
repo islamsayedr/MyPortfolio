@@ -143,7 +143,7 @@ h1{
   padding: 48px 56px;
 }
 .comment:hover{
-    border-bottom: 1px solid #8D0130;
+  border-bottom: 3px solid #8D0130;
 }
 .details{
   display: flex;
