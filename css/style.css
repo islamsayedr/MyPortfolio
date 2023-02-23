@@ -122,22 +122,6 @@ h1{
   width: 49%;
   /* padding: 10px; */
 }
-@media (max-width: 768px) {
-  .hero-content{
-    grid-column: 1 / 13;
-    padding-bottom: 40px;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-  }
-  .hero-img{
-    grid-column: 1 / 13;
-  }
-  .item{
-    width: 100%;
-    padding: 0px;
-  }
-}
 .item img{
   width: 100%;
   height: auto;
@@ -158,6 +142,9 @@ h1{
   border-bottom: 1px solid #606060;
   padding: 48px 56px;
 }
+.comment:hover{
+    border-bottom: 1px solid #8D0130;
+}
 .details{
   display: flex;
   justify-content: space-between;
@@ -174,4 +161,23 @@ h1{
   width: 100%;
   text-align: center;
   padding: 8px;
+}
+@media (max-width: 768px) {
+  .hero-content{
+    grid-column: 1 / 13;
+    padding-bottom: 40px;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+  }
+  .hero-img{
+    grid-column: 1 / 13;
+  }
+  .item{
+    width: 100%;
+    padding: 0px;
+  }
+  .comment{
+  padding: 16px;
+}
 }
