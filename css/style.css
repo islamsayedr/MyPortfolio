@@ -141,6 +141,8 @@ h1{
   background-color: #E3E3E3;
   border-bottom: 1px solid #606060;
   padding: 48px 56px;
+  text-align: center;
+  
 }
 .comment:hover{
   border-bottom: 3px solid #8D0130;
@@ -178,6 +180,6 @@ h1{
     padding: 0px;
   }
   .comment{
-  padding: 16px;
+  padding: 24px;
 }
 }
