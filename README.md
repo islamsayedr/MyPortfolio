@@ -1,2 +1,1 @@
-# Islam Sayed
- My personal website as a UI/UX designer.
+My personal website as a UI/UX designer.
