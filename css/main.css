@@ -7,6 +7,9 @@
   .dot{
     color: #8D0130;;
   }
+  .heroContent{
+    margin: 40px 0;
+  }
   /* end */
   /* feedback start */
   .comment{
