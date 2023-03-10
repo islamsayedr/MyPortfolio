@@ -20,8 +20,20 @@
   .details{
     padding: 16px 24px;
   }
-  /* end */
-/* skills start */
+.indicator{
+  height: 44px;
+}
+.spot{
+  height: 8px;
+  width: 8px;
+  background-color: var(--darkGray);
+}
+.selected{
+  background-color: var(--main);
+  height: 12px;
+  width: 12px;
+}
+
 li.skill{
   padding: 4px 8px;
   background-color: var(--pureWhite);
