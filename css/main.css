@@ -1,0 +1,25 @@
+  /* hero start */
+  section.hero{
+    padding-top: 0;
+    padding-bottom: 0;
+    background-color: #E1E2E4;
+  }
+  .dot{
+    color: #8D0130;;
+  }
+  /* end */
+  /* feedback start */
+  .comment{
+    padding: 44px 24px;
+    background-color: var(--lightGray);
+    border-bottom: 1px solid var(--darkGray);
+  }
+  .details{
+    padding: 16px 24px;
+  }
+  /* end */
+/* skills start */
+li.skill{
+  padding: 4px 8px;
+  background-color: var(--pureWhite);
+}

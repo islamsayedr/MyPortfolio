@@ -18,6 +18,7 @@
     }
     .hero-img{
       grid-column: 1 / 13;
+      grid-row: 1;
     }
     /* end */
     /* portfolio start */
