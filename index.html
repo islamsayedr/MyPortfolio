@@ -37,186 +37,205 @@
 </head>
 
 <body>
-    <nav class="header flx flxSpace flxCenter">
-        <a href="./index.html" class="logo flx"><img src="./icons/logo.svg" alt="Logo"></a>
-        <ul class="nav flx flxCenter">
-            <li><a href="./index.html" class="link active">HOME</a></li>
-            <li><a href="./about.html" class="link">ABOUT</a></li>
-            <li class="flx">
-                <a href="" title="Coming Soon..." class="link">BLOG</a>
-                <div class="padge">SOON</div>
-            </li>
-        </ul>
+    <nav class="header">
+        <div class="container flx flxSpace flxCenter wrap">
+            <a href="./index.html" class="logo flx"><img src="./icons/logo.svg" alt="Logo"></a>
+            <a href="javascript:void(0);" class="burger" title="burger menu" onclick="burgerMenu()">
+                <img src="./icons/hamburger-menu-icon-svg-17.jpg" alt="">
+            </a>
+            <ul class="nav flx flxCenter" id="navLinks">
+                <li><a href="./index.html" class="link active">HOME</a></li>
+                <li><a href="./about.html" class="link">ABOUT</a></li>
+                <li class="flx">
+                    <a href="" title="Coming Soon..." class="link">BLOG</a>
+                    <div class="padge">SOON</div>
+                </li>
+            </ul>
+        </div>
     </nav>
     <main>
         <!-- hero start -->
         <section class="hero">
-            <div class="grd">
-                <div class="heroContent col-1-2 flx flxVertical flxCenter2 gap-lg">
-                    <div class="flx flxVertical gap-s">
-                        <h1 class="">Islam S<span class="dot">.</span><br> Product Designer </h1>
-                        <p class="">Welcome to my online space, <br> My name is Islam Sayed, <br>
-                            UI/UX designer based in Egypt.
-                        </p>
+            <div class="container">
+                <div class="grd">
+                    <div class="heroContent col-1-2 flx flxVertical flxCenter2 gap-lg">
+                        <div class="flx flxVertical gap-s">
+                            <h1 class="">Islam S<span class="dot">.</span><br> Product Designer </h1>
+                            <p class="">Welcome to my online space, <br> My name is Islam Sayed, <br>
+                                UI/UX designer based in Egypt.
+                            </p>
+                        </div>
+                        <div class="btnCont flx gap-m">
+                            <a href="https://wa.me/00201092124608" target="_blank" class="btn primary" title="Whatsapp"
+                                rel="noopener">SAY
+                                HI!</a>
+                            <a href="https://drive.google.com/file/d/1-19-CDphJhfTB3m4yIWXWv7PbGOkKZap/view?usp=sharing"
+                                class="btn secondary" target="_blank" title="Resume" rel="noopener">RESUME</a>
+                        </div>
                     </div>
-                    <div class="btnCont flx gap-m">
-                        <a href="https://wa.me/00201092124608" target="_blank" class="btn primary" title="Whatsapp" rel="noopener">SAY
-                            HI!</a>
-                        <a href="https://drive.google.com/file/d/1-19-CDphJhfTB3m4yIWXWv7PbGOkKZap/view?usp=sharing"
-                            class="btn secondary" target="_blank" title="Resume" rel="noopener">RESUME</a>
-                    </div>
+                    <img src="./imgs/profile-img.png" class="heroPhoto col-2-2" alt="Islam Sayed Photo">
                 </div>
-                <img src="./imgs/profile-img.png" class="heroPhoto col-2-2" alt="Islam Sayed Photo">
             </div>
         </section>
         <!-- end -->
         <!-- portfolio start -->
         <section class="portfolio">
-            <div class="secTitle">
-                <div class="sepLine"></div>
-                <h2 class="title">My Portfolio</h2>
-            </div>
-            <div class="flx wrap gap-2 flxSpace">
-                <a href="https://www.behance.net/gallery/146532293/Dal_-UIUX-Branding" class="item card-1-2"
-                    rel="noopener" target="_blank">
-                    <img src="./imgs/portfolio-item-1.jpg" class="fixCard" alt="dal">
-                </a>
-                <a href="https://www.behance.net/gallery/142080989/Shipin-UIUX-Branding" class="item card-1-2"
-                    rel="noopener" target="_blank">
-                    <img src="./imgs/portfolio-item-2.jpg" class="fixCard" alt="shipin">
-                </a>
-                <a href="https://www.behance.net/gallery/114638469/Levape-iconset" class="item card-1-2" rel="noopener"
-                    target="_blank">
-                    <img src="./imgs/portfolio-item-4.jpg" class="fixCard" alt="levape">
-                </a>
+            <div class="container">
+                <div class="secTitle">
+                    <div class="sepLine"></div>
+                    <h2 class="title">My Portfolio</h2>
+                </div>
+                <div class="flx wrap gap-2 flxSpace">
+                    <a href="https://www.behance.net/gallery/146532293/Dal_-UIUX-Branding" class="item card-1-2"
+                        rel="noopener" target="_blank">
+                        <img src="./imgs/portfolio-item-1.jpg" class="fixCard" alt="dal">
+                    </a>
+                    <a href="https://www.behance.net/gallery/142080989/Shipin-UIUX-Branding" class="item card-1-2"
+                        rel="noopener" target="_blank">
+                        <img src="./imgs/portfolio-item-2.jpg" class="fixCard" alt="shipin">
+                    </a>
+                    <a href="https://www.behance.net/gallery/114638469/Levape-iconset" class="item card-1-2"
+                        rel="noopener" target="_blank">
+                        <img src="./imgs/portfolio-item-4.jpg" class="fixCard" alt="levape">
+                    </a>
+                </div>
             </div>
         </section>
         <!-- end -->
         <!-- feedback start -->
         <section class="Feedback">
-            <div class="secTitle">
-                <div class="sepLine"></div>
-                <h2 class="title">Client's Feedback</h2>
-            </div>
-            <div class="mySlides">
-                <div class="card card-1">
-                    <p class="comment">Islam has created professional, tailor-made design. He has a lot of
-                        creativity and
-                        ideas, moreover communication with him is excellent. I really recommend cooperation with Islam,
-                        I'm
-                        looking forward to have more jobs to work with this professional.</p>
-                    <div class="flx flxSpace details">
-                        <div class="flx flxCenter">
-                            <div class="ico-32">
-                                <img src="./icons/pl.svg" class="flag" alt="Poland">
+            <div class="container">
+                <div class="secTitle">
+                    <div class="sepLine"></div>
+                    <h2 class="title">Client's Feedback</h2>
+                </div>
+                <div class="mySlides">
+                    <div class="card card-1">
+                        <p class="comment">Islam has created professional, tailor-made design. He has a lot of
+                            creativity and
+                            ideas, moreover communication with him is excellent. I really recommend cooperation with
+                            Islam,
+                            I'm
+                            looking forward to have more jobs to work with this professional.</p>
+                        <div class="flx flxSpace details">
+                            <div class="flx flxCenter">
+                                <div class="ico-32">
+                                    <img src="./icons/pl.svg" class="flag" alt="Poland">
+                                </div>
+                                <i class="name">Matt G.</i>
                             </div>
-                            <i class="name">Matt G.</i>
-                        </div>
-                        <div class="flx flxCenter">
-                            <div class="ico-32">
-                                <img src="./icons/star.svg" class="star" alt="star rating">
+                            <div class="flx flxCenter">
+                                <div class="ico-32">
+                                    <img src="./icons/star.svg" class="star" alt="star rating">
+                                </div>
+                                <i class="rating">5.0</i>
                             </div>
-                            <i class="rating">5.0</i>
                         </div>
-                    </div>
-                    <div class="indicator flx flxCenter flxCenter2 gap-s">
-                        <span class="spot selected"></span>
-                        <span class="spot"></span>
-                        <span class="spot"></span>
-                        <span class="spot"></span>
+                        <div class="indicator flx flxCenter flxCenter2 gap-s">
+                            <span class="spot selected"></span>
+                            <span class="spot"></span>
+                            <span class="spot"></span>
+                            <span class="spot"></span>
+                        </div>
                     </div>
                 </div>
-            </div>
-            <div class="mySlides">
-                <div class="card card-1">
-                    <p class="comment">I really enjoyed working with Islam. He was one of the few designers who
-                        addressed most requirements of my logo. Very attentive to my requests as well.</p>
-                    <div class="flx flxSpace details">
-                        <div class="flx flxCenter">
-                            <div class="ico-32">
-                                <img src="./icons/australia-flag-icon.svg" class="flag" alt="Poland">
+                <div class="mySlides">
+                    <div class="card card-1">
+                        <p class="comment">I really enjoyed working with Islam. He was one of the few designers who
+                            addressed most requirements of my logo. Very attentive to my requests as well.</p>
+                        <div class="flx flxSpace details">
+                            <div class="flx flxCenter">
+                                <div class="ico-32">
+                                    <img src="./icons/australia-flag-icon.svg" class="flag" alt="Poland">
+                                </div>
+                                <i class="name">Mehrdad D</i>
                             </div>
-                            <i class="name">Mehrdad D</i>
-                        </div>
-                        <div class="flx flxCenter">
-                            <div class="ico-32">
-                                <img src="./icons/star.svg" class="star" alt="star rating">
+                            <div class="flx flxCenter">
+                                <div class="ico-32">
+                                    <img src="./icons/star.svg" class="star" alt="star rating">
+                                </div>
+                                <i class="rating">5.0</i>
                             </div>
-                            <i class="rating">5.0</i>
                         </div>
-                    </div>
-                    <div class="indicator flx flxCenter flxCenter2 gap-s">
-                        <span class="spot"></span>
-                        <span class="spot selected"></span>
-                        <span class="spot"></span>
-                        <span class="spot"></span>
+                        <div class="indicator flx flxCenter flxCenter2 gap-s">
+                            <span class="spot"></span>
+                            <span class="spot selected"></span>
+                            <span class="spot"></span>
+                            <span class="spot"></span>
 
+                        </div>
                     </div>
                 </div>
-            </div>
-            <div class="mySlides">
-                <div class="card card-1">
-                    <p class="comment">he has been super great!, very helpful and did everything we had asked him and on
-                        a timely matter. very professional and designs were right on target!. very beautiful and elegant
-                        design, and would love to work with him again on future designs!.</p>
-                    <div class="flx flxSpace details">
-                        <div class="flx flxCenter">
-                            <div class="ico-32">
-                                <img src="./icons/mexico-flag-icon.svg" class="flag" alt="Poland">
+                <div class="mySlides">
+                    <div class="card card-1">
+                        <p class="comment">he has been super great!, very helpful and did everything we had asked him
+                            and on
+                            a timely matter. very professional and designs were right on target!. very beautiful and
+                            elegant
+                            design, and would love to work with him again on future designs!.</p>
+                        <div class="flx flxSpace details">
+                            <div class="flx flxCenter">
+                                <div class="ico-32">
+                                    <img src="./icons/mexico-flag-icon.svg" class="flag" alt="Poland">
+                                </div>
+                                <i class="name">Cameron F.</i>
                             </div>
-                            <i class="name">Cameron F.</i>
-                        </div>
-                        <div class="flx flxCenter">
-                            <div class="ico-32">
-                                <img src="./icons/star.svg" class="star" alt="star rating">
+                            <div class="flx flxCenter">
+                                <div class="ico-32">
+                                    <img src="./icons/star.svg" class="star" alt="star rating">
+                                </div>
+                                <i class="rating">5.0</i>
                             </div>
-                            <i class="rating">5.0</i>
                         </div>
-                    </div>
-                    <div class="indicator flx flxCenter flxCenter2 gap-s">
-                        <span class="spot"></span>
-                        <span class="spot"></span>
-                        <span class="spot selected"></span>
-                        <span class="spot"></span>
+                        <div class="indicator flx flxCenter flxCenter2 gap-s">
+                            <span class="spot"></span>
+                            <span class="spot"></span>
+                            <span class="spot selected"></span>
+                            <span class="spot"></span>
+                        </div>
                     </div>
                 </div>
-            </div>
-            <div class="mySlides">
-                <div class="card card-1">
-                    <p class="comment">It was fantastic workign with Islam S and we would definitely work with them
-                        again! Very talented and creative!.</p>
-                    <div class="flx flxSpace details">
-                        <div class="flx flxCenter">
-                            <div class="ico-32">
-                                <img src="./icons/australia-flag-icon.svg" class="flag" alt="Poland">
+                <div class="mySlides">
+                    <div class="card card-1">
+                        <p class="comment">It was fantastic workign with Islam S and we would definitely work with them
+                            again! Very talented and creative!.</p>
+                        <div class="flx flxSpace details">
+                            <div class="flx flxCenter">
+                                <div class="ico-32">
+                                    <img src="./icons/australia-flag-icon.svg" class="flag" alt="Poland">
+                                </div>
+                                <i class="name">Kate L.</i>
                             </div>
-                            <i class="name">Kate L.</i>
-                        </div>
-                        <div class="flx flxCenter">
-                            <div class="ico-32">
-                                <img src="./icons/star.svg" class="star" alt="star rating">
+                            <div class="flx flxCenter">
+                                <div class="ico-32">
+                                    <img src="./icons/star.svg" class="star" alt="star rating">
+                                </div>
+                                <i class="rating">5.0</i>
                             </div>
-                            <i class="rating">5.0</i>
                         </div>
-                    </div>
-                    <div class="indicator flx flxCenter flxCenter2 gap-s">
-                        <span class="spot"></span>
-                        <span class="spot"></span>
-                        <span class="spot"></span>
-                        <span class="spot selected"></span>
+                        <div class="indicator flx flxCenter flxCenter2 gap-s">
+                            <span class="spot"></span>
+                            <span class="spot"></span>
+                            <span class="spot"></span>
+                            <span class="spot selected"></span>
+                        </div>
                     </div>
                 </div>
             </div>
         </section>
     </main>
-    <footer class="footer flx flxSpace flxCenter wrap gap-lg">
-        <a href="#"><img src="./icons/logo.svg" class="logo" alt="Logo"></a>
-        <ul class="footerLinks flx flxCenter gap-m wrap">
-            <li><a href="mailto:Islamsayedr@gmail.com" target="_blank" class="link"
-                    title="mail">Islamsayedr@gmail.com</a></li>
-            <li><a href="https://www.linkedin.com/in/geosid40" target="_blank" class="link" rel="noopener">LINKEDIN</a></li>
-            <li><a href="https://www.behance.net/geosid40" target="_blank" class="link" rel="noopener">BEHANCE</a></li>
-        </ul>
+    <footer class="footer">
+        <div class="container flx flxSpace flxCenter wrap gap-lg">
+            <a href="#"><img src="./icons/logo.svg" class="logo" alt="Logo"></a>
+            <ul class="footerLinks flx flxCenter gap-m wrap">
+                <li><a href="mailto:Islamsayedr@gmail.com" target="_blank" class="link"
+                        title="mail">Islamsayedr@gmail.com</a></li>
+                <li><a href="https://www.linkedin.com/in/geosid40" target="_blank" class="link"
+                        rel="noopener">LINKEDIN</a></li>
+                <li><a href="https://www.behance.net/geosid40" target="_blank" class="link" rel="noopener">BEHANCE</a>
+                </li>
+            </ul>
+        </div>
     </footer>
     <small class="copyrights flx flxCenter flxVertical">©All right reserved by Islam 2023</small>
     <!-- script -->

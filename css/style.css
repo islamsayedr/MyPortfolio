@@ -29,8 +29,10 @@ body{
   line-height: 24px;
   background-color:#F2F2F2;
 }
-section{
-  padding: 80px 12%;
+.container{
+  padding: 40px 120px;
+  max-width: 1440px;
+  margin: auto;
 }
 h1{
   font-family: test-tiempos-fine-bold;
@@ -189,13 +191,18 @@ a.link:hover{
 }
 /* heder and footer */
 .header{
-  height: 80px;
-  padding: 0 12%;
   border-bottom: 1px solid #606060;
+}
+.header .container{
+  height: 80px;
+  padding: 0 120px;
 }
 .footer{
   border-top: 1px solid #606060;
-  padding: 32px 12%;
+  margin-top: 40px;
+}
+.footer .container{
+  padding: 32px 120px;
 }
 .copyrights{
   padding: 8px;

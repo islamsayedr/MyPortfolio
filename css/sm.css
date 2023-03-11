@@ -1,6 +1,28 @@
 @media (max-width: 768px) {
-  section{
-    padding: 40px 12%;
+  /* section{
+    padding: 40px 24px;
+  } */
+  .container,
+  .header .container,
+  .footer .container{
+    padding: 0 24px;
+  }
+  .header .container{
+    height:max-content;
+  }
+  .nav{
+    margin: 16px auto;
+  }
+  .footer{
+    padding: 32px 24px;
+  }
+  #navLinks{
+    display: none;
+    width: 100%;
+    justify-content: center;
+  }
+  .burger{
+    display: block;
   }
   .heroPhoto{
     grid-column: 1/13;
@@ -18,7 +40,8 @@
   .comment{
   padding: 24px;
   }
-  .footer, .footerLinks{
+  .footer .container, 
+  .footerLinks{
     justify-content: center;
   }
   .about p{
@@ -26,5 +49,8 @@
   }
   .skillSet{
     justify-content: center;
+  }
+  .aboutImg{
+    margin: 32px 0;
   }
 }

@@ -1,9 +1,25 @@
+  .burger{
+    display: none;
+  }
+  .burger img{
+    width: 48px;
+    padding: 8px;
+  }
+  .logo img{
+    width: 48px;
+    padding: 16px 0;
+  }
+  #navLinks{
+    display: flex;
+  }
   /* hero start */
   section.hero{
+    background-color: #E1E2E4;
     padding-top: 0;
     padding-bottom: 0;
-    background-color: #E1E2E4;
+    margin-bottom: 40px;
   }
+
   .dot{
     color: #8D0130;;
   }
@@ -37,4 +53,7 @@
 li.skill{
   padding: 4px 8px;
   background-color: var(--pureWhite);
+}
+.aboutImg{
+  margin-bottom: 40px;
 }

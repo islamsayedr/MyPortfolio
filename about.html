@@ -37,82 +37,96 @@
 </head>
 
 <body>
-    <nav class="header flx flxSpace flxCenter">
-        <a href="./index.html" class="logo flx"><img src="./icons/logo.svg" alt="Logo"></a>
-        <ul class="nav flx flxCenter">
-            <li><a href="./index.html" class="link">HOME</a></li>
-            <li><a href="./about.html" class="link active">ABOUT</a></li>
-            <li class="flx">
-                <a href="" title="Coming Soon..." class="link">BLOG</a>
-                <div class="padge">SOON</div>
-            </li>
-        </ul>
+    <nav class="header">
+        <div class="container flx flxSpace flxCenter wrap">
+            <a href="./index.html" class="logo flx"><img src="./icons/logo.svg" alt="Logo"></a>
+            <a href="javascript:void(0);" class="burger" title="burger menu" onclick="burgerMenu()">
+                <img src="./icons/hamburger-menu-icon-svg-17.jpg" alt="">
+            </a>
+            <ul class="nav flx flxCenter" id="navLinks">
+                <li><a href="./index.html" class="link">HOME</a></li>
+                <li><a href="./about.html" class="link active">ABOUT</a></li>
+                <li class="flx">
+                    <a href="" title="Coming Soon..." class="link">BLOG</a>
+                    <div class="padge">SOON</div>
+                </li>
+            </ul>
+        </div>
     </nav>
     <main>
         <!-- about -->
         <section class="about">
-            <!-- sep start -->
-            <div class="col-1 secTitle">
-                <div class="sepLine"></div>
-                <h2 class="title">Brief summary</h2>
+            <div class="container">
+                <img src="./imgs/about-img.jpg" class="aboutImg" alt="my photo">
+                <!-- sep start -->
+                <div class="col-1 secTitle">
+                    <div class="sepLine"></div>
+                    <h2 class="title">Brief summary</h2>
+                </div>
+                <!-- end -->
+                <p>A UI/UX Designer with a background in Graphic Design and the ability to
+                    write HTML, CSS, and JS code, Certified by the ITI (Information
+                    Technology Institute), and have a proven freelancing experience in
+                    visual, User Interface, and Graphic Design, seeking a challenging role to
+                    utilize my passion for human behavior and problem-solving through
+                    user-centered design.</p>
             </div>
-            <!-- end -->
-            <p>A UI/UX Designer with a background in Graphic Design and the ability to 
-                write HTML, CSS, and JS code, Certified by the ITI (Information 
-                Technology Institute), and have a proven freelancing experience in 
-                visual, User Interface, and Graphic Design, seeking a challenging role to 
-                utilize my passion for human behavior and problem-solving through 
-                user-centered design.</p>
         </section>
         <!-- end -->
         <!-- tools -->
         <section class="skills">
-            <div class="secTitle">
-                <div class="sepLine"></div>
-                <h2 class="title">What I've Worked with</h2>
+            <div class="container">
+                <div class="secTitle">
+                    <div class="sepLine"></div>
+                    <h2 class="title">What I've Worked with</h2>
+                </div>
+                <ul class="skillSet flx gap-s wrap">
+                    <li class="skill"><img src="" alt="">Agile</li>
+                    <li class="skill"><img src="" alt="">Design Thinking</li>
+                    <li class="skill"><img src="" alt="">Competitive Analysis</li>
+                    <li class="skill"><img src="" alt="">Heuristic Evaluation</li>
+                    <li class="skill"><img src="" alt="">User Research</li>
+                    <li class="skill"><img src="" alt="">Usability Testing</li>
+                    <li class="skill"><img src="" alt="">Thematic Analysis</li>
+                    <li class="skill"><img src="" alt="">SWOT Analysis</li>
+                    <li class="skill"><img src="" alt="">Card Sorting</li>
+                    <li class="skill"><img src="" alt="">Wireframing</li>
+                    <li class="skill"><img src="" alt="">Design System</li>
+                    <li class="skill"><img src="" alt="">Visual Design</li>
+                    <li class="skill"><img src="" alt="">Prototyping</li>
+                    <li class="skill"><img src="" alt="">Mockups</li>
+                    <li class="skill"><img src="" alt="">User Flows</li>
+                    <li class="skill"><img src="" alt="">sitemaps</li>
+                    <li class="skill"><img src="" alt="">Sketching</li>
+                    <li class="skill"><img src="" alt="">Figma</li>
+                    <li class="skill"><img src="" alt="">Adobe xd</li>
+                    <li class="skill"><img src="" alt="">Photoshop</li>
+                    <li class="skill"><img src="" alt="">Illustrator</li>
+                    <li class="skill"><img src="" alt="">Inkscape</li>
+                    <li class="skill"><img src="" alt="">GIMP</li>
+                    <li class="skill"><img src="" alt="">Trello</li>
+                    <li class="skill"><img src="" alt="">Notion</li>
+                    <li class="skill"><img src="" alt="">Zeplin</li>
+                    <li class="skill"><img src="" alt="">HTML</li>
+                    <li class="skill"><img src="" alt="">CSS</li>
+                    <li class="skill"><img src="" alt="">JS</li>
+                    <li class="skill"><img src="" alt="">Bootstrap</li>
+                </ul>
             </div>
-            <ul class="skillSet flx gap-s wrap">
-                <li class="skill"><img src="" alt="">Agile</li>
-                <li class="skill"><img src="" alt="">Design Thinking</li>
-                <li class="skill"><img src="" alt="">Competitive Analysis</li>
-                <li class="skill"><img src="" alt="">Heuristic Evaluation</li>
-                <li class="skill"><img src="" alt="">User Research</li>
-                <li class="skill"><img src="" alt="">Usability Testing</li>
-                <li class="skill"><img src="" alt="">Thematic Analysis</li>
-                <li class="skill"><img src="" alt="">SWOT Analysis</li>
-                <li class="skill"><img src="" alt="">Card Sorting</li>
-                <li class="skill"><img src="" alt="">Wireframing</li>
-                <li class="skill"><img src="" alt="">Design System</li>
-                <li class="skill"><img src="" alt="">Visual Design</li>
-                <li class="skill"><img src="" alt="">Prototyping</li>
-                <li class="skill"><img src="" alt="">Mockups</li>
-                <li class="skill"><img src="" alt="">User Flows</li>
-                <li class="skill"><img src="" alt="">sitemaps</li>
-                <li class="skill"><img src="" alt="">Sketching</li>
-                <li class="skill"><img src="" alt="">Figma</li>
-                <li class="skill"><img src="" alt="">Adobe xd</li>
-                <li class="skill"><img src="" alt="">Photoshop</li>
-                <li class="skill"><img src="" alt="">Illustrator</li>
-                <li class="skill"><img src="" alt="">Inkscape</li>
-                <li class="skill"><img src="" alt="">GIMP</li>
-                <li class="skill"><img src="" alt="">Trello</li>
-                <li class="skill"><img src="" alt="">Notion</li>
-                <li class="skill"><img src="" alt="">Zeplin</li>
-                <li class="skill"><img src="" alt="">HTML</li>
-                <li class="skill"><img src="" alt="">CSS</li>
-                <li class="skill"><img src="" alt="">JS</li>
-                <li class="skill"><img src="" alt="">Bootstrap</li>
-            </ul>
         </section>
     </main>
-    <footer class="footer flx flxSpace flxCenter wrap gap-lg">
-        <a href="#"><img src="./icons/logo.svg" class="logo" alt="Logo"></a>
-        <ul class="footerLinks flx flxCenter gap-m wrap">
-            <li><a href="mailto:Islamsayedr@gmail.com" target="_blank" class="link"
-                    title="mail">Islamsayedr@gmail.com</a></li>
-            <li><a href="https://www.linkedin.com/in/geosid40" target="_blank" class="link">LINKEDIN</a></li>
-            <li><a href="https://www.behance.net/geosid40" target="_blank" class="link">BEHANCE</a></li>
-        </ul>
+    <footer class="footer">
+        <div class="container flx flxSpace flxCenter wrap gap-lg">
+            <a href="#"><img src="./icons/logo.svg" class="logo" alt="Logo"></a>
+            <ul class="footerLinks flx flxCenter gap-m wrap">
+                <li><a href="mailto:Islamsayedr@gmail.com" target="_blank" class="link"
+                        title="mail">Islamsayedr@gmail.com</a></li>
+                <li><a href="https://www.linkedin.com/in/geosid40" target="_blank" class="link"
+                        rel="noopener">LINKEDIN</a></li>
+                <li><a href="https://www.behance.net/geosid40" target="_blank" class="link" rel="noopener">BEHANCE</a>
+                </li>
+            </ul>
+        </div>
     </footer>
     <small class="copyrights flx flxCenter flxVertical">©All right reserved by Islam 2023</small>
     <!-- script -->
