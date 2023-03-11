@@ -1,7 +1,7 @@
 @media (max-width: 768px) {
-  /* section{
-    padding: 40px 24px;
-  } */
+  section{
+    padding: 40px 0px;
+  }
   .container,
   .header .container,
   .footer .container{
