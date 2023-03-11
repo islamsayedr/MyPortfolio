@@ -22,12 +22,25 @@
 /* General Elements---------------------------------------------- */
 *{
   box-sizing: border-box;
+  
 }
 body{
   font-family: Roboto-Regular;
   font-size: 16px;
   line-height: 24px;
   background-color:#F2F2F2;
+  height: 100vh;
+  /* cursor: none; */
+  /* cursor: url('../icons/cursor.svg'), auto; */
+}
+.cursor{
+  position:absolute;
+  z-index: 0;
+  height: 8px;
+  width: 8px;
+  background-color: var(--main);
+  transition-duration: 200ms;
+  transition-timing-function: ease-out;
 }
 .container{
   padding: 40px 120px;
