@@ -32,6 +32,7 @@
     padding: 44px 24px;
     background-color: var(--lightGray);
     border-bottom: 1px solid var(--darkGray);
+    text-align: center;
   }
   .details{
     padding: 16px 24px;
@@ -53,6 +54,9 @@
 li.skill{
   padding: 4px 8px;
   background-color: var(--pureWhite);
+}
+li.skill:hover{
+  border: 1px solid var(--main);
 }
 .aboutImg{
   margin-bottom: 40px;
