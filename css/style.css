@@ -33,15 +33,6 @@ body{
   /* cursor: none; */
   /* cursor: url('../icons/cursor.svg'), auto; */
 }
-.cursor{
-  position:absolute;
-  z-index: 0;
-  height: 8px;
-  width: 8px;
-  background-color: var(--main);
-  transition-duration: 200ms;
-  transition-timing-function: ease-out;
-}
 .container{
   padding: 40px 120px;
   max-width: 1440px;
@@ -83,6 +74,9 @@ img{
 .col-2-2{
   grid-column: 7/13;
 }
+.row{
+  width: 100%;
+}
 .flx{
   display: flex;
 }
@@ -116,7 +110,12 @@ img{
 .fixCard{
   margin-bottom: -7px;
 }
-
+.flxGrow{
+  flex-grow: 1;
+}
+.txtCenter{
+  text-align: center;
+}
 /* Components---------------------------------------------- */
 /* padge start */
 .padge{
@@ -164,25 +163,30 @@ a.link:hover{
 }
 .btn{
   display: block;
-  padding: 8px 16px;
+  font-weight: 500;
+  padding: 12px 24px;
   width: -moz-fit-content;
   width: fit-content;
+  border-radius: 8px;
+  font-family: Roboto-Medium;
 }
 .primary{
-  background-color: #8D0130;
+  background: linear-gradient(36deg, rgba(141,1,48,1) 53%, rgba(189,9,70,1) 100%);
   color: #E7E3D7;
 }
 .btn.primary:hover{
-  background-color: #a10338;
+  background: linear-gradient(36deg, rgb(160, 1, 54) 53%, rgb(209, 11, 77) 100%);
 }
 .secondary{
   border: 1px solid #8D0130;
   color: #8D0130;
 }
 .btn.secondary:hover{
-  background-color: #8D0130;
-  color: #E7E3D7;
+  color: #8D0130;
+  background-color: white;
+  border: none;
 }
+
 .active{
   color: #8D0130;
   font-family: Roboto-Medium;
@@ -204,14 +208,26 @@ a.link:hover{
 }
 /* heder and footer */
 .header{
-  border-bottom: 1px solid #606060;
+  position: fixed;
+  width: 100%;
+  background-color: rgb(255, 255, 255, .6);
+  backdrop-filter: saturate(180%) blur(20px);
+  border-bottom: .5px solid #bbbbbb;
+  z-index: 3;
 }
 .header .container{
-  height: 80px;
-  padding: 0 120px;
+  height: 64px;
+  padding: 0 32px;
+}
+.social .icon{
+  color: #606060;
+}
+.social .icon:hover{
+  color: #8D0130;
 }
 .footer{
-  border-top: 1px solid #606060;
+  border-top: .5px solid #bbbbbb;
+  background-color: var(--lightGray);
   margin-top: 40px;
 }
 .footer .container{
@@ -219,6 +235,7 @@ a.link:hover{
 }
 .copyrights{
   padding: 8px;
+  border-top: .5px solid #bbbbbb;
   background-color: var(--lightGray);
   font-size: 12px;
 }

@@ -2,24 +2,30 @@
     display: none;
   }
   .burger img{
-    width: 48px;
-    padding: 8px;
+    width: 40px;
   }
   .logo img{
-    width: 48px;
-    padding: 16px 0;
+    width: 40px;
+    /* padding: 16px 0; */
   }
   #navLinks{
-    display: flex;
+    justify-content: space-between;
   }
-  /* hero start */
+  /* hero start-------------- */
   section.hero{
     background-color: #E1E2E4;
-    padding-top: 0;
-    padding-bottom: 0;
-    margin-bottom: 40px;
+    /* background-image: linear-gradient( 135deg, rgba(142, 1, 48, 0.302) 1%,#E1E2E4 49%, #E1E2E4 50%); */
+    padding-top: 104px;
+    padding-bottom: 40px;
+    
   }
-
+  .name{
+    background-image: url(https://media.giphy.com/media/26BROrSHlmyzzHf3i/giphy.gif);
+    background-size: cover;
+    color: transparent;
+    -moz-background-clip: text;
+    -webkit-background-clip: text;
+  }
   .dot{
     color: #8D0130;;
   }
@@ -27,7 +33,67 @@
     margin: 40px 0;
   }
   /* end */
-  /* feedback start */
+  /* statics------------------------ */
+  section.statics .container{
+    padding-top: 24px;
+  }
+  .scard{
+    font-family: test-tiempos-fine-bold;
+    font-size: 56px;
+    line-height: 56px;
+    padding: 32px 0 32px 0;
+    border-radius: 12px;
+    background-image: linear-gradient(45deg, #d0d0d0, #E1E2E4);
+  }
+  .scard p{
+    font-family: Roboto-Regular;
+    font-size: 16px;
+    line-height: 24px;
+    opacity: 60%;
+  }
+
+  /* end */
+  /* work--------------------------- */
+  .item{
+    background-color: white;
+    border-radius: 12px;
+  }
+  .itemCover{
+    width: 60%;
+    border-radius: 12px;
+  }
+  .itemInfo{
+    padding: 24px;
+  }
+  .item.itemLeft{
+    flex-direction: row-reverse;
+  }
+  .itemTitle{
+    font-family: test-tiempos-fine-bold;
+    font-size: 56px;
+    line-height: 56px;
+  }
+  .itemNote{
+    padding-top: 16px;
+    padding-bottom: 16px;
+  }
+  .itemInfo a.link{
+    padding: 0;
+  }
+  .keywordContainer{
+    padding-top: 24px;
+  }
+  .keyword{
+    font-size: 14px;
+    line-height: 18px;
+    padding: 5px 10px;
+    border-radius: 4px;
+    color: white;
+    background-image: linear-gradient(#28313B,
+    #485461);
+  }
+  /* end */
+  /* feedback start----------------- */
   .comment{
     padding: 44px 24px;
     background-color: var(--lightGray);

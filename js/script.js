@@ -1,24 +1,3 @@
-// // cursor
-// const cursor = document.querySelector(".cursor");
-// const moveCursor = (e) => {
-//     const mouseY = e.clientY;
-//     const mouseX = e.clientX;
-//     cursor.style.transform = `translate3d(${mouseX-4}px, ${mouseY-4}px, 0)`;
-// }
-// document.addEventListener('mousemove', moveCursor)
-
-
-
-const newCursor = document.querySelector(".cursor");
-document.addEventListener('mousemove', e =>{
-    newCursor.setAttribute("style", "top: "+(e.pageY-12)+"px; left: "+(e.pageX-12)+"px;" )
-});
-document.addEventListener('mousedown', function () {
-    newCursor.classList.add('click');
-});
-document.addEventListener('mouseup', function () {
-    newCursor.classList.remove('click')
-});
 // burger menu
 function burgerMenu() {
     var x = document.getElementById("navLinks");
@@ -28,7 +7,29 @@ function burgerMenu() {
         x.style.display = "flex";
     }
 }
-// slideshow
+
+// counter
+document.addEventListener("DOMContentLoaded", () => {
+    function counter(id, start, end, duration) {
+     let obj = document.getElementById(id),
+      current = start,
+      range = end - start,
+      increment = end > start ? 1 : -1,
+      step = Math.abs(Math.floor(duration / range)),
+      timer = setInterval(() => {
+       current += increment;
+       obj.textContent = current;
+       if (current == end) {
+        clearInterval(timer);
+       }
+      }, step);
+    }
+    counter("years", 0, 2, 500);
+    counter("clients", 0, 12, 1000);
+    counter("projects", 0, 24, 1000);
+});
+
+// slideshow feedback
 let slideIndex = 0;
 function showSlides() {
     let i;
