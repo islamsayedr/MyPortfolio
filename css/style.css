@@ -123,10 +123,11 @@ img{
   line-height: 10px;
   width: max-content;
   height: 18px;
-  background-color: var(--main);
+  background-color: var(--darkGray);
   color: var(--white);
   padding: 4px 6px;
-  /* border-radius: 9px; */
+  border-radius: 9px;
+  margin-left: 8px;
 }
 /* padge end */
 /* section header start */

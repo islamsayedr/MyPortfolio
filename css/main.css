@@ -97,8 +97,12 @@
   .comment{
     padding: 44px 24px;
     background-color: var(--lightGray);
-    border-bottom: 1px solid var(--darkGray);
+    /* border-bottom: 1px solid var(--darkGray); */
+    border-radius: 12px;
     text-align: center;
+    font-size: 18px;
+    line-height: 32px;
+    color: var(--darkGray);
   }
   .details{
     padding: 16px 24px;
@@ -110,6 +114,7 @@
   height: 8px;
   width: 8px;
   background-color: var(--darkGray);
+  border-radius: 12px;
 }
 .selected{
   background-color: var(--main);
