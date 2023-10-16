@@ -207,36 +207,3 @@ a.link:hover{
   justify-content: center;
   align-items: center;
 }
-/* heder and footer */
-.header{
-  position: fixed;
-  width: 100%;
-  background-color: rgb(255, 255, 255, .6);
-  backdrop-filter: saturate(180%) blur(20px);
-  border-bottom: .5px solid #bbbbbb;
-  z-index: 3;
-}
-.header .container{
-  height: 64px;
-  padding: 0 32px;
-}
-.social .icon{
-  color: #606060;
-}
-.social .icon:hover{
-  color: #8D0130;
-}
-.footer{
-  border-top: .5px solid #bbbbbb;
-  background-color: var(--lightGray);
-  margin-top: 40px;
-}
-.footer .container{
-  padding: 32px 120px;
-}
-.copyrights{
-  padding: 8px;
-  border-top: .5px solid #bbbbbb;
-  background-color: var(--lightGray);
-  font-size: 12px;
-}

@@ -45,6 +45,6 @@ function showSlides() {
 
     slides[slideIndex - 1].style.display = "flex";
 
-    setTimeout(showSlides, 7000);
+    setTimeout(showSlides, 3000);
 }
 showSlides();

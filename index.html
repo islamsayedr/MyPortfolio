@@ -1,409 +1,491 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <!-- meta tags  -->
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="author" content="xJuniors Agency" />
+    <meta name="language" content="english" />
+    <meta
+      name="description"
+      content="it is the Portfolio of Islam Sayed, a user experience and user interface designer (UI/UX Designer) based in Egypt"
+    />
+    <meta name="”title”" content="Home Page" />
+    <meta name="robots" content="index,follow" />
+    <meta name="copyright" content="Copyright Islam Sayed 2023" />
+    <meta name="format-detection" content="telephone=yes" />
+    <meta name="format-detection" content="email=yes" />
+    <meta name="HandheldFriendly" content="true" />
+    <!-- open graph protocol -->
+    <meta property="op:title" content="HomePage" />
+    <meta property="op:type" content="website" />
+    <meta property="op:url" content="https://www.islamsayedr.com" />
+    <meta
+      property="op:image"
+      content="https://islam-97d.pages.dev/imgs/profile-img.png"
+    />
+    <meta
+      property="op:description"
+      content="This the portfolio website for an Egyption UI/UX Designer"
+    />
+    <meta property="op:site_name" content="IslamSayed Portfolio" />
+    <meta property="op:locale" content="ar_EG" />
+    <!-- title & favicon -->
+    <title>Islam Sayed | Product Designer</title>
+    <link rel="shortcut icon" href="./icons/favicon.svg" type="image/svg+xml" />
+    <link rel="apple-touch-icon" href="./icons/favicon.png" />
+    <!-- css links -->
+    <link rel="stylesheet" href="./css/reset.css" />
+    <link rel="stylesheet" href="./css/style.css" />
+    <link rel="stylesheet" href="./css/main.css" />
+    <script
+      src="https://kit.fontawesome.com/7f5095bbb1.js"
+      crossorigin="anonymous"
+    ></script>
+  </head>
 
-<head>
-  <!-- meta tags  -->
-  <meta charset="UTF-8" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="author" content="xJuniors Agency" />
-  <meta name="language" content="english" />
-  <meta name="description"
-    content="it is the Portfolio of Islam Sayed, a user experience and user interface designer (UI/UX Designer) based in Egypt" />
-  <meta name="”title”" content="Home Page" />
-  <meta name="robots" content="index,follow" />
-  <meta name="copyright" content="Copyright Islam Sayed 2023" />
-  <meta name="format-detection" content="telephone=yes" />
-  <meta name="format-detection" content="email=yes" />
-  <meta name="HandheldFriendly" content="true" />
-  <!-- open graph protocol -->
-  <meta property="op:title" content="HomePage" />
-  <meta property="op:type" content="website" />
-  <meta property="op:url" content="https://www.islamsayed.cf" />
-  <meta property="op:image" content="https://islam-97d.pages.dev/imgs/profile-img.png" />
-  <meta property="op:description" content="This the portfolio website for an Egyption UI/UX Designer" />
-  <meta property="op:site_name" content="IslamSayed Portfolio" />
-  <meta property="op:locale" content="ar_EG" />
-  <!-- title & favicon -->
-  <title>Islam Sayed | Product Designer</title>
-  <link rel="shortcut icon" href="./icons/favicon.svg" type="image/svg+xml" />
-  <link rel="apple-touch-icon" href="./icons/favicon.png" />
-  <!-- css links -->
-  <link rel="stylesheet" href="./css/reset.css" />
-  <link rel="stylesheet" href="./css/style.css" />
-  <link rel="stylesheet" href="./css/main.css" />
-  <link rel="stylesheet" href="./css/md.css" />
-  <link rel="stylesheet" href="./css/sm.css" />
-  <script src="https://kit.fontawesome.com/7f5095bbb1.js" crossorigin="anonymous"></script>
-</head>
+  <body>
+    <header class="header">
+      <div class="container flx flxSpace flxCenter wrap gap-lg">
+        <a href="./index.html" class="logo flx"
+          ><img src="./icons/logo.svg" alt="Logo"
+        /></a>
 
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-7MN5SZ2RJE"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag() {
-    dataLayer.push(arguments);
-  }
-  gtag("js", new Date());
+        <a
+          href="javascript:void(0);"
+          class="burger"
+          title="burger menu"
+          onclick="burgerMenu()"
+        >
+          <img src="./icons/hamburger-menu-icon-svg-17.jpg" alt="" />
+        </a>
 
-  gtag("config", "G-7MN5SZ2RJE");
-</script>
-<!-- mail -->
-<script
-  id="mcjs">!function (c, h, i, m, p) { m = c.createElement(h), p = c.getElementsByTagName(h)[0], m.async = 1, m.src = i, p.parentNode.insertBefore(m, p) }(document, "script", "https://chimpstatic.com/mcjs-connected/js/users/c3024fdf6158ac8718217bbe9/b3ba3d867f20defe9f07bc545.js");</script>
+        <div class="nav flx flxGrow gap-lg" id="navLinks">
+          <ul class="flx flxCenter flxCenter2 flxGrow">
+            <li><a href="./index.html" class="link active">HOME</a></li>
+            <!-- <li><a href="./about.html" class="link">ABOUT</a></li> -->
+            <li class="flx">
+              <span href="" title="Coming Soon..." class="">BLOG</span>
+              <div class="padge">SOON</div>
+            </li>
+          </ul>
 
-<body>
-  <header class="header">
-    <div class="container flx flxSpace flxCenter wrap gap-lg">
-      <a href="./index.html" class="logo flx"><img src="./icons/logo.svg" alt="Logo" /></a>
+          <div class="social flx flxCenter gap-m">
+            <a
+              href="https://www.linkedin.com/in/islamsayedr"
+              title="Islam Sayed's Linkedin"
+              target="_blank"
+            >
+              <i class="fa-brands fa-linkedin-in fa-1.5x icon"></i>
+            </a>
+            <a
+              href="https://www.behance.net/geosid40"
+              title="Islam Sayed's Behance"
+              target="_blank"
+            >
+              <i class="fa-brands fa-behance fa-1.5x icon"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+    </header>
 
-      <a href="javascript:void(0);" class="burger" title="burger menu" onclick="burgerMenu()">
-        <img src="./icons/hamburger-menu-icon-svg-17.jpg" alt="" />
-      </a>
+    <main>
+      <!-- hero start -->
+      <section class="hero">
+        <div class="container flx flxVertical gap-lg">
+          <div class="flx flxVertical gap-s">
+            <h1 class="name txtCenter">
+              Islam S.<br />
+              Product Designer
+            </h1>
+            <p class="intro txtCenter">
+              Welcome to my online space, <br />
+              My name is Islam Sayed, <br />
+              A UI/UX designer based in Egypt.
+            </p>
+          </div>
 
-      <div class="nav flx flxGrow gap-lg" id="navLinks">
-        <ul class="flx flxCenter flxCenter2 flxGrow">
-          <li><a href="./index.html" class="link active">HOME</a></li>
-          <!-- <li><a href="./about.html" class="link">ABOUT</a></li> -->
-          <li class="flx">
-            <a href="" title="Coming Soon..." class="">BLOG</a>
-            <div class="padge">SOON</div>
+          <div class="btnCont flx flxCenter2 gap-m">
+            <a
+              href="https://t.me/islamsayedr"
+              target="_blank"
+              class="btn primary"
+              title="Whatsapp"
+              rel="noopener"
+            >
+              SAY HI! <i class="fa-regular fa-heart"></i>
+            </a>
+            <a href="#work" class="btn secondary" title="Work" rel="noopener"
+              >MY WORK <i class="fa-solid fa-arrow-right"></i>
+            </a>
+          </div>
+        </div>
+      </section>
+      <!-- end -->
+      <div class="ad">
+        <p class="adContent">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48">
+            <path
+              fill="#263238"
+              d="M24,4C15.296,4,7.911,9.571,5.162,17.333h37.675C40.089,9.571,32.704,4,24,4z"
+            />
+            <path
+              fill="#eceff1"
+              d="M42.838,30.667C43.577,28.579,44,26.341,44,24c0-2.341-0.423-4.579-1.162-6.667H5.162 C4.423,19.421,4,21.659,4,24c0,2.341,0.423,4.579,1.162,6.667H42.838z"
+            />
+            <path
+              fill="#2e7d32"
+              d="M23.999,44h0.002c8.704,0,16.088-5.571,18.836-13.333H5.162C7.911,38.429,15.295,43.999,23.999,44z"
+            />
+            <path
+              fill="#d50000"
+              d="M11.565,8.353C6.96,12.017,4,17.658,4,24s2.96,11.983,7.565,15.647L36.6,24L11.565,8.353z"
+            />
+          </svg>
+          We stand with our friends and families in Palestine.
+        </p>
+      </div>
+      <!-- statics start -->
+      <section class="statics">
+        <div class="container flx gap-lg">
+          <div class="scard flx flxVertical flxGrow flxCenter">
+            <div class="numCont flx">
+              <span class="plus">+</span>
+              <span id="years"></span>
+            </div>
+            <p class="under">Years of experience</p>
+          </div>
+          <div class="scard flx flxVertical flxGrow flxCenter">
+            <div class="numCont flx">
+              <span class="plus">+</span>
+              <span id="clients"></span>
+            </div>
+            <p class="under">Client nationality</p>
+          </div>
+          <div class="scard flx flxVertical flxGrow flxCenter">
+            <div class="numCont flx">
+              <span class="plus">+</span>
+              <span id="projects"></span>
+            </div>
+            <p class="under">Project completed</p>
+          </div>
+        </div>
+      </section>
+      <!-- end -->
+      <!-- work start -->
+      <section class="work" id="work">
+        <div class="container">
+          <div class="secTitle">
+            <div class="sepLine"></div>
+            <h2 class="title">Work Samples</h2>
+          </div>
+
+          <div class="flx itemContainer flxVertical gap-lg">
+            <div class="item sc itemRight flx row flxCenter">
+              <img src="./imgs/sc.jpg" class="itemCover" alt="Coupons Marke" />
+
+              <div class="itemInfo flx flxVertical">
+                <h3 class="itemTitle">Couponz Souq</h3>
+                <p class="itemNote">
+                  Description is comming soon...
+                </p>
+                <!-- <a href="#" class="link"
+                  >View On Dribbble
+                  <i class="fa-solid fa-arrow-right"></i>
+                </a> -->
+                <div class="keywordContainer flx wrap gap-s">
+                  <span class="keyword">UI Design</span>
+                  <span class="keyword">Mobile App</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="item t3 itemLeft flx row flxCenter">
+              <img src="./imgs/t3.jpg" class="itemCover" alt="Tracker 3arbya" />
+
+              <div class="itemInfo flx flxVertical">
+                <h3 class="itemTitle">Tracker 3arbya</h3>
+                <p class="itemNote">
+                  Description is comming soon...
+                </p>
+                <!-- <a href="#" class="link"
+                  >View On Behance
+                  <i class="fa-solid fa-arrow-right"></i>
+                </a> -->
+                <div class="keywordContainer flx wrap gap-s">
+                  <span class="keyword">CaseStudy</span>
+                  <span class="keyword">UX Design</span>
+                  <span class="keyword">UI Design</span>
+                  <span class="keyword">Mobile App</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="item dal itemRight flx row flxCenter">
+              <img src="./imgs/tia.jpg" class="itemCover" alt="Tia" />
+
+              <div class="itemInfo flx flxVertical">
+                <h3 class="itemTitle">Tia Jewelry</h3>
+                <p class="itemNote">
+                  Description is comming soon...
+                </p>
+                <!-- <a href="#" class="link"
+                  >View On Behance
+                  <i class="fa-solid fa-arrow-right"></i>
+                </a> -->
+                <div class="keywordContainer flx wrap gap-s">
+                  <span class="keyword">UX Design</span>
+                  <span class="keyword">UI Design</span>
+                  <span class="keyword">website App</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="item dal itemLeft flx row flxCenter">
+              <img src="./imgs/dal.jpg" class="itemCover" alt="dal" />
+
+              <div class="itemInfo flx flxVertical">
+                <h3 class="itemTitle">Dal</h3>
+                <p class="itemNote">
+                  Description is comming soon...
+                </p>
+                <a href="#" class="link"
+                  >View On Behance
+                  <i class="fa-solid fa-arrow-right"></i>
+                </a>
+                <div class="keywordContainer flx wrap gap-s">
+                  <span class="keyword">CaseStudy</span>
+                  <span class="keyword">UX Design</span>
+                  <span class="keyword">UI Design</span>
+                  <span class="keyword">Mobile App</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="item dal itemRight flx row flxCenter">
+              <img src="./imgs/shipin.jpg" class="itemCover" alt="Shipin" />
+
+              <div class="itemInfo flx flxVertical">
+                <h3 class="itemTitle">shipin</h3>
+                <p class="itemNote">
+                  Description is comming soon...
+                </p>
+                <a href="#" class="link"
+                  >View On Behance
+                  <i class="fa-solid fa-arrow-right"></i>
+                </a>
+                <div class="keywordContainer flx wrap gap-s">
+                  <span class="keyword">CaseStudy</span>
+                  <span class="keyword">UX Design</span>
+                  <span class="keyword">UI Design</span>
+                  <span class="keyword">Mobile App</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- end -->
+      <!-- feedback start -->
+      <section class="Feedback">
+        <div class="container">
+          <div class="secTitle">
+            <div class="sepLine"></div>
+            <h2 class="title">Client's Feedback</h2>
+          </div>
+          <div class="mySlides">
+            <div class="card card-1">
+              <p class="comment">
+                Islam has created professional, tailor-made design. He has a lot
+                of creativity and ideas, moreover communication with him is
+                excellent. I really recommend cooperation with Islam, I'm
+                looking forward to have more jobs to work with this
+                professional.
+              </p>
+              <div class="flx flxSpace details">
+                <div class="flx flxCenter">
+                  <div class="ico-32">
+                    <img src="./icons/pl.svg" class="flag" alt="Poland" />
+                  </div>
+                  <i class="name">Matt G.</i>
+                </div>
+                <div class="flx flxCenter">
+                  <div class="ico-32">
+                    <img
+                      src="./icons/star.svg"
+                      class="star"
+                      alt="star rating"
+                    />
+                  </div>
+                  <i class="rating">5.0</i>
+                </div>
+              </div>
+              <div class="indicator flx flxCenter flxCenter2 gap-s">
+                <span class="spot selected"></span>
+                <span class="spot"></span>
+                <span class="spot"></span>
+                <span class="spot"></span>
+              </div>
+            </div>
+          </div>
+          <div class="mySlides">
+            <div class="card card-1">
+              <p class="comment">
+                I really enjoyed working with Islam. He was one of the few
+                designers who addressed most requirements of my logo. Very
+                attentive to my requests as well.
+              </p>
+              <div class="flx flxSpace details">
+                <div class="flx flxCenter">
+                  <div class="ico-32">
+                    <img
+                      src="./icons/australia-flag-icon.svg"
+                      class="flag"
+                      alt="Poland"
+                    />
+                  </div>
+                  <i class="name">Mehrdad D</i>
+                </div>
+                <div class="flx flxCenter">
+                  <div class="ico-32">
+                    <img
+                      src="./icons/star.svg"
+                      class="star"
+                      alt="star rating"
+                    />
+                  </div>
+                  <i class="rating">5.0</i>
+                </div>
+              </div>
+              <div class="indicator flx flxCenter flxCenter2 gap-s">
+                <span class="spot"></span>
+                <span class="spot selected"></span>
+                <span class="spot"></span>
+                <span class="spot"></span>
+              </div>
+            </div>
+          </div>
+          <div class="mySlides">
+            <div class="card card-1">
+              <p class="comment">
+                he has been super great!, very helpful and did everything we had
+                asked him and on a timely matter. very professional and designs
+                were right on target!. very beautiful and elegant design, and
+                would love to work with him again on future designs!.
+              </p>
+              <div class="flx flxSpace details">
+                <div class="flx flxCenter">
+                  <div class="ico-32">
+                    <img
+                      src="./icons/mexico-flag-icon.svg"
+                      class="flag"
+                      alt="Poland"
+                    />
+                  </div>
+                  <i class="name">Cameron F.</i>
+                </div>
+                <div class="flx flxCenter">
+                  <div class="ico-32">
+                    <img
+                      src="./icons/star.svg"
+                      class="star"
+                      alt="star rating"
+                    />
+                  </div>
+                  <i class="rating">5.0</i>
+                </div>
+              </div>
+              <div class="indicator flx flxCenter flxCenter2 gap-s">
+                <span class="spot"></span>
+                <span class="spot"></span>
+                <span class="spot selected"></span>
+                <span class="spot"></span>
+              </div>
+            </div>
+          </div>
+          <div class="mySlides">
+            <div class="card card-1">
+              <p class="comment">
+                It was fantastic working with Islam S and we would definitely
+                work with them again! Very talented and creative!.
+              </p>
+              <div class="flx flxSpace details">
+                <div class="flx flxCenter">
+                  <div class="ico-32">
+                    <img
+                      src="./icons/australia-flag-icon.svg"
+                      class="flag"
+                      alt="Poland"
+                    />
+                  </div>
+                  <i class="name">Kate L.</i>
+                </div>
+                <div class="flx flxCenter">
+                  <div class="ico-32">
+                    <img
+                      src="./icons/star.svg"
+                      class="star"
+                      alt="star rating"
+                    />
+                  </div>
+                  <i class="rating">5.0</i>
+                </div>
+              </div>
+              <div class="indicator flx flxCenter flxCenter2 gap-s">
+                <span class="spot"></span>
+                <span class="spot"></span>
+                <span class="spot"></span>
+                <span class="spot selected"></span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+    <!-- end -->
+    <!-- footer -->
+    <footer class="footer">
+      <div class="container flx flxSpace flxCenter wrap gap-lg">
+        <a href="#"><img src="./icons/logo.svg" class="logo" alt="Logo" /></a>
+        <ul class="footerLinks flx flxCenter gap-m wrap">
+          <li>
+            <a
+              href="mailto:Islamsayedr@gmail.com"
+              target="_blank"
+              class="link"
+              title="mail"
+              >Islamsayedr@gmail.com</a
+            >
+          </li>
+          <li>
+            <a
+              href="https://www.linkedin.com/in/geosid40"
+              target="_blank"
+              class="link"
+              rel="noopener"
+              >LINKEDIN</a
+            >
+          </li>
+          <li>
+            <a
+              href="https://www.behance.net/geosid40"
+              target="_blank"
+              class="link"
+              rel="noopener"
+              >BEHANCE</a
+            >
           </li>
         </ul>
-
-        <div class="social flx flxCenter gap-m">
-          <a href="https://www.linkedin.com/in/islamsayedr" title="Islam Sayed's Linkedin" target="_blank">
-            <i class="fa-brands fa-linkedin-in fa-1.5x icon"></i>
-          </a>
-          <a href="https://www.behance.net/geosid40" title="Islam Sayed's Behance" target="_blank">
-            <i class="fa-brands fa-behance fa-1.5x icon"></i>
-          </a>
-        </div>
       </div>
-    </div>
-  </header>
-
-  <main>
-    <!-- hero start -->
-    <section class="hero">
-      <div class="container flx flxVertical gap-lg">
-        <div class="flx flxVertical gap-s">
-          <h1 class="name txtCenter">
-            Islam S.<br />
-            Product Designer
-          </h1>
-          <p class="intro txtCenter">
-            Welcome to my online space, <br />
-            My name is Islam Sayed, <br />
-            A UI/UX designer based in Egypt.
-          </p>
-        </div>
-
-        <div class="btnCont flx flxCenter2 gap-m">
-          <a href="https://wa.me/00201092124608" target="_blank" class="btn primary" title="Whatsapp" rel="noopener">
-            SAY HI! <i class="fa-regular fa-heart"></i>
-          </a>
-          <a href="#" class="btn secondary" title="Work" rel="noopener">MY WORK <i class="fa-solid fa-arrow-right"></i>
-          </a>
-        </div>
-      </div>
-    </section>
+    </footer>
+    <small class="copyrights flx flxCenter flxVertical"
+      >©All right reserved - islamsayedr 2023</small
+    >
     <!-- end -->
-    <!-- statics start -->
-    <section class="statics">
-      <div class="container flx gap-lg">
-        <div class="scard flx flxVertical flxGrow flxCenter">
-          <div class="numCont flx">
-            <span class="plus">+</span>
-            <span id="years"></span>
-          </div>
-          <p class="under">Years of experience</p>
-        </div>
-        <div class="scard flx flxVertical flxGrow flxCenter">
-          <div class="numCont flx">
-            <span class="plus">+</span>
-            <span id="clients"></span>
-          </div>
-          <p class="under">Client nationality</p>
-        </div>
-        <div class="scard flx flxVertical flxGrow flxCenter">
-          <div class="numCont flx">
-            <span class="plus">+</span>
-            <span id="projects"></span>
-          </div>
-          <p class="under">Project completed</p>
-        </div>
-      </div>
-    </section>
+    <!-- script -->
+    <script src="./js/script.js"></script>
     <!-- end -->
-    <!-- work start -->
-    <section class="work">
-      <div class="container">
-        <div class="secTitle">
-          <div class="sepLine"></div>
-          <h2 class="title">My Work</h2>
-        </div>
-
-        <div class="flx itemContainer flxVertical gap-lg">
-          <div class="item sc itemRight flx row flxCenter">
-
-            <img src="./imgs/sc.jpg" class="itemCover" alt="Coupons Marke" />
-
-            <div class="itemInfo flx flxVertical">
-              <h3 class="itemTitle">Couponz Souq</h3>
-              <p class="itemNote">
-                A smart parking app developed by Pal Smart Solutions Company,
-                underwent a revamp due to usability issues and a lack of
-                visual appeal in its previous version...
-              </p>
-              <a href="#" class="link">View On Dribbble
-                <i class="fa-solid fa-arrow-right"></i>
-              </a>
-              <div class="keywordContainer flx wrap gap-s">
-                <span class="keyword">UI Design</span>
-                <span class="keyword">Mobile App</span>
-              </div>
-            </div>
-          </div>
-
-          <div class="item t3 itemLeft flx row flxCenter">
-            <img src="./imgs/t3.jpg" class="itemCover" alt="Tracker 3arbya" />
-
-            <div class="itemInfo flx flxVertical">
-              <h3 class="itemTitle">Tracker 3arbya</h3>
-              <p class="itemNote">
-                A smart parking app developed by Pal Smart Solutions Company,
-                underwent a revamp due to usability issues and a lack of
-                visual appeal in its previous version...
-              </p>
-              <a href="#" class="link">View On Behance
-                <i class="fa-solid fa-arrow-right"></i>
-              </a>
-              <div class="keywordContainer flx wrap gap-s">
-                <span class="keyword">CaseStudy</span>
-                <span class="keyword">UX Design</span>
-                <span class="keyword">UI Design</span>
-                <span class="keyword">Mobile App</span>
-              </div>
-            </div>
-          </div>
-
-          <div class="item dal itemRight flx row flxCenter">
-            <img src="./imgs/tia.jpg" class="itemCover" alt="Tia" />
-
-            <div class="itemInfo flx flxVertical">
-              <h3 class="itemTitle">Tia Jewelry</h3>
-              <p class="itemNote">
-                A smart parking app developed by Pal Smart Solutions Company,
-                underwent a revamp due to usability issues and a lack of
-                visual appeal in its previous version...
-              </p>
-              <a href="#" class="link">View On Behance
-                <i class="fa-solid fa-arrow-right"></i>
-              </a>
-              <div class="keywordContainer flx wrap gap-s">
-                <span class="keyword">UX Design</span>
-                <span class="keyword">UI Design</span>
-                <span class="keyword">website App</span>
-              </div>
-            </div>
-          </div>
-
-          <div class="item dal itemLeft flx row flxCenter">
-            <img src="./imgs/dal.jpg" class="itemCover" alt="dal" />
-
-            <div class="itemInfo flx flxVertical">
-              <h3 class="itemTitle">Dal</h3>
-              <p class="itemNote">
-                A smart parking app developed by Pal Smart Solutions Company,
-                underwent a revamp due to usability issues and a lack of
-                visual appeal in its previous version...
-              </p>
-              <a href="#" class="link">View On Behance
-                <i class="fa-solid fa-arrow-right"></i>
-              </a>
-              <div class="keywordContainer flx wrap gap-s">
-                <span class="keyword">CaseStudy</span>
-                <span class="keyword">UX Design</span>
-                <span class="keyword">UI Design</span>
-                <span class="keyword">Mobile App</span>
-              </div>
-            </div>
-          </div>
-
-          <div class="item dal itemRight flx row flxCenter">
-            <img src="./imgs/shipin.jpg" class="itemCover" alt="Shipin" />
-
-            <div class="itemInfo flx flxVertical">
-              <h3 class="itemTitle">shipin</h3>
-              <p class="itemNote">
-                A smart parking app developed by Pal Smart Solutions Company,
-                underwent a revamp due to usability issues and a lack of
-                visual appeal in its previous version...
-              </p>
-              <a href="#" class="link">View On Behance
-                <i class="fa-solid fa-arrow-right"></i>
-              </a>
-              <div class="keywordContainer flx wrap gap-s">
-                <span class="keyword">CaseStudy</span>
-                <span class="keyword">UX Design</span>
-                <span class="keyword">UI Design</span>
-                <span class="keyword">Mobile App</span>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-    <!-- end -->
-
-    <!-- feedback start -->
-    <section class="Feedback">
-      <div class="container">
-        <div class="secTitle">
-          <div class="sepLine"></div>
-          <h2 class="title">Client's Feedback</h2>
-        </div>
-        <div class="mySlides">
-          <div class="card card-1">
-            <p class="comment">
-              Islam has created professional, tailor-made design. He has a lot
-              of creativity and ideas, moreover communication with him is
-              excellent. I really recommend cooperation with Islam, I'm
-              looking forward to have more jobs to work with this
-              professional.
-            </p>
-            <div class="flx flxSpace details">
-              <div class="flx flxCenter">
-                <div class="ico-32">
-                  <img src="./icons/pl.svg" class="flag" alt="Poland" />
-                </div>
-                <i class="name">Matt G.</i>
-              </div>
-              <div class="flx flxCenter">
-                <div class="ico-32">
-                  <img src="./icons/star.svg" class="star" alt="star rating" />
-                </div>
-                <i class="rating">5.0</i>
-              </div>
-            </div>
-            <div class="indicator flx flxCenter flxCenter2 gap-s">
-              <span class="spot selected"></span>
-              <span class="spot"></span>
-              <span class="spot"></span>
-              <span class="spot"></span>
-            </div>
-          </div>
-        </div>
-        <div class="mySlides">
-          <div class="card card-1">
-            <p class="comment">
-              I really enjoyed working with Islam. He was one of the few
-              designers who addressed most requirements of my logo. Very
-              attentive to my requests as well.
-            </p>
-            <div class="flx flxSpace details">
-              <div class="flx flxCenter">
-                <div class="ico-32">
-                  <img src="./icons/australia-flag-icon.svg" class="flag" alt="Poland" />
-                </div>
-                <i class="name">Mehrdad D</i>
-              </div>
-              <div class="flx flxCenter">
-                <div class="ico-32">
-                  <img src="./icons/star.svg" class="star" alt="star rating" />
-                </div>
-                <i class="rating">5.0</i>
-              </div>
-            </div>
-            <div class="indicator flx flxCenter flxCenter2 gap-s">
-              <span class="spot"></span>
-              <span class="spot selected"></span>
-              <span class="spot"></span>
-              <span class="spot"></span>
-            </div>
-          </div>
-        </div>
-        <div class="mySlides">
-          <div class="card card-1">
-            <p class="comment">
-              he has been super great!, very helpful and did everything we had
-              asked him and on a timely matter. very professional and designs
-              were right on target!. very beautiful and elegant design, and
-              would love to work with him again on future designs!.
-            </p>
-            <div class="flx flxSpace details">
-              <div class="flx flxCenter">
-                <div class="ico-32">
-                  <img src="./icons/mexico-flag-icon.svg" class="flag" alt="Poland" />
-                </div>
-                <i class="name">Cameron F.</i>
-              </div>
-              <div class="flx flxCenter">
-                <div class="ico-32">
-                  <img src="./icons/star.svg" class="star" alt="star rating" />
-                </div>
-                <i class="rating">5.0</i>
-              </div>
-            </div>
-            <div class="indicator flx flxCenter flxCenter2 gap-s">
-              <span class="spot"></span>
-              <span class="spot"></span>
-              <span class="spot selected"></span>
-              <span class="spot"></span>
-            </div>
-          </div>
-        </div>
-        <div class="mySlides">
-          <div class="card card-1">
-            <p class="comment">
-              It was fantastic working with Islam S and we would definitely
-              work with them again! Very talented and creative!.
-            </p>
-            <div class="flx flxSpace details">
-              <div class="flx flxCenter">
-                <div class="ico-32">
-                  <img src="./icons/australia-flag-icon.svg" class="flag" alt="Poland" />
-                </div>
-                <i class="name">Kate L.</i>
-              </div>
-              <div class="flx flxCenter">
-                <div class="ico-32">
-                  <img src="./icons/star.svg" class="star" alt="star rating" />
-                </div>
-                <i class="rating">5.0</i>
-              </div>
-            </div>
-            <div class="indicator flx flxCenter flxCenter2 gap-s">
-              <span class="spot"></span>
-              <span class="spot"></span>
-              <span class="spot"></span>
-              <span class="spot selected"></span>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-  </main>
-  <footer class="footer">
-    <div class="container flx flxSpace flxCenter wrap gap-lg">
-      <a href="#"><img src="./icons/logo.svg" class="logo" alt="Logo" /></a>
-      <ul class="footerLinks flx flxCenter gap-m wrap">
-        <li>
-          <a href="mailto:Islamsayedr@gmail.com" target="_blank" class="link" title="mail">Islamsayedr@gmail.com</a>
-        </li>
-        <li>
-          <a href="https://www.linkedin.com/in/geosid40" target="_blank" class="link" rel="noopener">LINKEDIN</a>
-        </li>
-        <li>
-          <a href="https://www.behance.net/geosid40" target="_blank" class="link" rel="noopener">BEHANCE</a>
-        </li>
-      </ul>
-    </div>
-  </footer>
-  <small class="copyrights flx flxCenter flxVertical">©All right reserved - IslamS. 2023</small>
-  <!-- script -->
-  <script src="./js/script.js"></script>
-</body>
-
+  </body>
 </html>
