@@ -12,8 +12,9 @@ npm run dev
 Routes:
 
 - `/` — portfolio home
+- `/work` — all portfolio projects
+- `/reviews` — all client reviews
 - `/about` — about and skills
-- `/blog` — article preview
 - `/for-designers` — coming soon page
 
 Build with `npm run build` and preview with `npm run start`.

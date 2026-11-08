@@ -29,7 +29,6 @@ export function Header() {
       <nav className={open ? 'site-nav open' : 'site-nav'}>
         <Link to="/" activeProps={{ className: 'active' }} onClick={() => setOpen(false)}>Home</Link>
         <Link to="/about" activeProps={{ className: 'active' }} onClick={() => setOpen(false)}>About</Link>
-        <Link to="/blog" activeProps={{ className: 'active' }} onClick={() => setOpen(false)}>Blog</Link>
         <Link to="/for-designers" activeProps={{ className: 'active' }} onClick={() => setOpen(false)}>For designers</Link>
       </nav>
       <div className="social-links"><a href="https://www.linkedin.com/in/islamsayedr" target="_blank" rel="noreferrer" aria-label="LinkedIn"><FaLinkedinIn aria-hidden="true" /></a><a href="https://t.me/islamsayedr" target="_blank" rel="noreferrer" aria-label="Telegram"><FaTelegramPlane aria-hidden="true" /></a></div>
@@ -38,8 +37,21 @@ export function Header() {
 }
 
 export function Footer() {
-  return <footer className="site-footer"><div className="footer-inner"><Link to="/"><img src="/icons/logo.svg" alt="Islam Sayed home" /></Link><div className="footer-links"><a href="mailto:Islamsayedr@gmail.com">Islamsayedr@gmail.com</a><a href="https://www.linkedin.com/in/geosid40" target="_blank" rel="noreferrer">LinkedIn</a><a href="https://www.behance.net/geosid40" target="_blank" rel="noreferrer">Behance</a></div></div><small>© 2025 Islam Sayed. All rights reserved.</small></footer>
+  return <footer className="site-footer">
+    <div className="footer-inner">
+      <div className="footer-brand"><Link to="/"><img src="/icons/logo.svg" alt="Islam Sayed home" /></Link></div>
+      <form className="newsletter-form" onSubmit={event => {
+        event.preventDefault()
+        const email = String(new FormData(event.currentTarget).get('email') ?? '').trim()
+        window.location.href = `mailto:Islamsayedr@gmail.com?subject=${encodeURIComponent('Newsletter subscription request')}&body=${encodeURIComponent(`Please subscribe me to your newsletter.\nEmail: ${email}`)}`
+      }}>
+        <label className="sr-only" htmlFor="newsletter-email">Email address for newsletter</label>
+        <div className="newsletter-fields"><input id="newsletter-email" name="email" type="email" autoComplete="email" placeholder="Enter your email for design updates" required /><button className="button primary" type="submit" title="Opens your email app to request a newsletter subscription">Subscribe</button></div>
+      </form>
+    </div>
+    <small>© {new Date().getFullYear()} Islam Sayed. All rights reserved.</small>
+  </footer>
 }
 
 export function Page({ children }: { children: ReactNode }) { return <><Header />{children}<Footer /></> }
-export function SectionTitle({ children }: { children: ReactNode }) { return <div className="section-title"><span className="section-title-line" aria-hidden="true" /><h2>{children}</h2><span className="section-title-line" aria-hidden="true" /></div> }
+export function SectionTitle({ children }: { children: ReactNode }) { return <div className="section-title"><h2>{children}</h2></div> }
