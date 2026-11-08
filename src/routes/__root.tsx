@@ -18,9 +18,9 @@ export const Route = createRootRoute({
 
 function RootDocument() {
   return (
-    <html lang="en">
+    <html lang="en" className="scroll-smooth motion-reduce:scroll-auto">
       <head><HeadContent /></head>
-      <body><Outlet /><Scripts /></body>
+      <body className="m-0 bg-paper font-sans text-base leading-normal text-ink"><Outlet /><Scripts /></body>
     </html>
   )
 }

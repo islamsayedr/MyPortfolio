@@ -5,6 +5,7 @@
   "scripts": {
     "dev": "vite dev",
     "build": "vite build",
+    "typecheck": "tsc --noEmit",
     "start": "vite preview"
   },
   "dependencies": {
@@ -16,8 +17,12 @@
     "solar-icon-set": "^2.0.1"
   },
   "devDependencies": {
+    "@tailwindcss/vite": "^4.3.5",
     "@tanstack/router-plugin": "latest",
+    "@types/react": "^19.3.0",
+    "@types/react-dom": "^19.3.0",
     "@vitejs/plugin-react": "latest",
+    "tailwindcss": "^4.3.5",
     "typescript": "latest",
     "vite": "latest"
   }
