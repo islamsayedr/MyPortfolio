@@ -298,3 +298,50 @@
       margin: 32px 0;
     }
   }
+
+  /* Compatibility styles for the older blog and designer pages. */
+  .grd {
+    padding-top: 104px;
+  }
+
+  .flex-container {
+    width: min(100% - 48px, 1200px);
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 24px;
+  }
+
+  .header .flex-container {
+    min-height: 64px;
+  }
+
+  .placeHolder {
+    min-height: 70vh;
+    padding: 160px 24px 80px;
+    display: grid;
+    place-items: center;
+    text-align: center;
+  }
+
+  .articleBtn {
+    display: inline-block;
+    margin-top: 16px;
+    color: var(--main);
+    font-family: Roboto-Medium;
+  }
+
+  .footer-links {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    flex-wrap: wrap;
+  }
+
+  @media (max-width: 768px) {
+    .flex-container {
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+  }

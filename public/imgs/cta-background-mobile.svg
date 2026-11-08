@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="700" height="900" viewBox="0 0 700 900" preserveAspectRatio="none" fill="none">
+<defs>
+<linearGradient id="base" x2="1600" y2="900" gradientUnits="userSpaceOnUse"><stop stop-color="#200916"/><stop offset=".5" stop-color="#350d24"/><stop offset="1" stop-color="#170b1b"/></linearGradient>
+
+<radialGradient id="halo"><stop stop-color="#a32150" stop-opacity=".4"/><stop offset="1" stop-color="#a32150" stop-opacity="0"/></radialGradient>
+
+</defs>
+<path fill="url(#base)" d="M0 0h1600v900H0z"/>
+<ellipse cx="800" cy="450" rx="900" ry="650" fill="url(#halo)"/>
+
+
+<g stroke="#de7196" stroke-width="3" opacity=".5"><path d="M130 70H50v80M570 830h80v-80"/></g>
+<g stroke="#de7196" stroke-width="1" opacity=".15"><path d="M150 50H30v120M550 850h120V730"/></g>
+</svg>

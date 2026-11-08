@@ -11,26 +11,26 @@
       name="description"
       content="it is the Portfolio of Islam Sayed, a user experience and user interface designer (UI/UX Designer) based in Egypt"
     />
-    <meta name="”title”" content="Home Page" />
+    <meta name="title" content="Islam Sayed | Product Designer" />
     <meta name="robots" content="index,follow" />
     <meta name="copyright" content="Copyright Islam Sayed 2023" />
     <meta name="format-detection" content="telephone=yes" />
     <meta name="format-detection" content="email=yes" />
     <meta name="HandheldFriendly" content="true" />
     <!-- open graph protocol -->
-    <meta property="op:title" content="HomePage" />
-    <meta property="op:type" content="website" />
-    <meta property="op:url" content="https://www.islamsayedr.com" />
+    <meta property="og:title" content="HomePage" />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://www.islamsayedr.com" />
     <meta
-      property="op:image"
+      property="og:image"
       content="https://islam-97d.pages.dev/imgs/profile-img.png"
     />
     <meta
-      property="op:description"
+      property="og:description"
       content="This the portfolio website for an Egyption UI/UX Designer"
     />
-    <meta property="op:site_name" content="IslamSayed Portfolio" />
-    <meta property="op:locale" content="ar_EG" />
+    <meta property="og:site_name" content="IslamSayed Portfolio" />
+    <meta property="og:locale" content="ar_EG" />
     <!-- title & favicon -->
     <title>Islam Sayed | Product Designer</title>
     <link rel="shortcut icon" href="./icons/favicon.svg" type="image/svg+xml" />
@@ -53,10 +53,12 @@
         /></a>
 
         <a
-          href="javascript:void(0);"
+          href="#navLinks"
           class="burger"
-          title="burger menu"
-          onclick="burgerMenu()"
+          title="Open navigation menu"
+          aria-controls="navLinks"
+          aria-expanded="false"
+          onclick="burgerMenu(); return false;"
         >
           <img src="./icons/hamburger-menu-icon-svg-17.jpg" alt="" />
         </a>
@@ -66,7 +68,7 @@
             <li><a href="./index.html" class="link active">HOME</a></li>
             <!-- <li><a href="./about.html" class="link">ABOUT</a></li> -->
             <li class="flx">
-              <span href="" title="Coming Soon..." class="">BLOG</span>
+              <a href="./blog.html" title="Blog" class="link">BLOG</a>
               <div class="padge">SOON</div>
             </li>
           </ul>
@@ -189,7 +191,7 @@
               <div class="itemInfo flx flxVertical">
                 <h3 class="itemTitle">Couponz Souq</h3>
                 <p class="itemNote">
-                  Description is comming soon...
+                  Project details coming soon...
                 </p>
                 <!-- <a href="#" class="link"
                   >View On Dribbble
@@ -208,7 +210,7 @@
               <div class="itemInfo flx flxVertical">
                 <h3 class="itemTitle">Tracker 3arbya</h3>
                 <p class="itemNote">
-                  Description is comming soon...
+                  Project details coming soon...
                 </p>
                 <!-- <a href="#" class="link"
                   >View On Behance
@@ -229,7 +231,7 @@
               <div class="itemInfo flx flxVertical">
                 <h3 class="itemTitle">Tia Jewelry</h3>
                 <p class="itemNote">
-                  Description is comming soon...
+                  Project details coming soon...
                 </p>
                 <!-- <a href="#" class="link"
                   >View On Behance
@@ -249,9 +251,9 @@
               <div class="itemInfo flx flxVertical">
                 <h3 class="itemTitle">Dal</h3>
                 <p class="itemNote">
-                  Description is comming soon...
+                  Project details coming soon...
                 </p>
-                <a href="#" class="link"
+                <a href="https://www.behance.net/geosid40" class="link" target="_blank" rel="noopener noreferrer"
                   >View On Behance
                   <i class="fa-solid fa-arrow-right"></i>
                 </a>
@@ -270,9 +272,9 @@
               <div class="itemInfo flx flxVertical">
                 <h3 class="itemTitle">shipin</h3>
                 <p class="itemNote">
-                  Description is comming soon...
+                  Project details coming soon...
                 </p>
-                <a href="#" class="link"
+                <a href="https://www.behance.net/geosid40" class="link" target="_blank" rel="noopener noreferrer"
                   >View On Behance
                   <i class="fa-solid fa-arrow-right"></i>
                 </a>
@@ -448,7 +450,7 @@
     <!-- footer -->
     <footer class="footer">
       <div class="container flx flxSpace flxCenter wrap gap-lg">
-        <a href="#"><img src="./icons/logo.svg" class="logo" alt="Logo" /></a>
+        <a href="./index.html"><img src="./icons/logo.svg" class="logo" alt="Logo" /></a>
         <ul class="footerLinks flx flxCenter gap-m wrap">
           <li>
             <a
