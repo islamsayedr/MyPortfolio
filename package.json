@@ -2,11 +2,18 @@
   "name": "islam-sayed-portfolio",
   "private": true,
   "type": "module",
+  "engines": {
+    "node": ">=22.12.0"
+  },
   "scripts": {
     "dev": "vite dev",
     "build": "vite build",
     "typecheck": "tsc --noEmit",
-    "start": "vite preview"
+    "start": "vite preview",
+    "preview": "npm run build && wrangler dev",
+    "deploy": "npm run build && wrangler deploy",
+    "deploy:dry-run": "npm run build && wrangler deploy --dry-run",
+    "cf-typegen": "wrangler types"
   },
   "dependencies": {
     "@tanstack/react-router": "latest",
@@ -17,13 +24,16 @@
     "solar-icon-set": "^2.0.1"
   },
   "devDependencies": {
+    "@cloudflare/vite-plugin": "^1.67.0",
     "@tailwindcss/vite": "^4.3.5",
     "@tanstack/router-plugin": "latest",
+    "@types/node": "^22.20.5",
     "@types/react": "^19.3.0",
     "@types/react-dom": "^19.3.0",
     "@vitejs/plugin-react": "latest",
     "tailwindcss": "^4.3.5",
     "typescript": "latest",
-    "vite": "latest"
+    "vite": "latest",
+    "wrangler": "^4.158.0"
   }
 }

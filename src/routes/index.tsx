@@ -1,7 +1,7 @@
 import { createFileRoute, Link } from '@tanstack/react-router'
 import { ArrowRightLinear } from 'solar-icon-set'
 import { Carousel } from '../carousel'
-import { Page, SectionTitle } from '../components'
+import { Page } from '../components'
 import { projects, ProjectCard } from '../projects'
 import { testimonials, ReviewCard } from '../reviews'
 import { animatedHeadingClass, buttonClass, containerClass, primaryButtonClass, sectionHeaderClass, sectionHeadingClass, viewMoreClass } from '../ui'
@@ -38,7 +38,7 @@ function HomePage() {
 
       <section className="border-y border-ink/5 bg-linear-[180deg,#e3e3e366,#e3e3e333] py-16 md:py-24" aria-labelledby="workflow-heading">
         <div className={containerClass}>
-          <SectionTitle><span id="workflow-heading">My workflow</span></SectionTitle>
+          <div className="mb-7 text-start md:mb-10"><h2 className={sectionHeadingClass} id="workflow-heading">My workflow</h2></div>
           <ol className="m-0 grid list-none grid-cols-1 gap-4 p-0 md:grid-cols-2 md:gap-5 lg:grid-cols-4">
             {workflow.map((step, index) => <li className="relative rounded-none border border-ink/5 bg-white/70 p-6 md:px-6 md:py-7" key={step.title}>
               <div className="flex items-start gap-3 md:gap-3.5">
