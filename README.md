@@ -59,6 +59,18 @@ npm run cf-typegen     # Generate binding types when needed
 
 `npm run dev` also uses the Workers runtime through the Cloudflare Vite plugin. Cloudflare local state, generated types, and `.dev.vars` secrets are ignored by Git.
 
+## Localization
+
+The header language selector supports `en-US`, `en-UK`, `en-AU`, `ar-EG`, and `ar-KSA`.
+
+- `en-UK` uses the standard `en-GB` HTML/Intl locale; `ar-KSA` uses `ar-SA`.
+- A `portfolio_locale` cookie saves explicit choices for one year. Without a saved choice, the app negotiates `Accept-Language`, falling back to `en-US`.
+- The root loader resolves the language on the server, so translated content, page metadata, `lang`, and `dir` match on the initial render. Switching languages reloads the current page and keeps its URL.
+- English variants initially share English copy; Arabic variants share Modern Standard Arabic copy. Regional dates and numbers use `Intl`, with Gregorian dates for the career timeline.
+- Arabic uses local Noto Sans Arabic fonts and RTL layouts, including mirrored timeline controls and carousel keyboard navigation. Brand/project names are preserved.
+- Catalogs and regional overrides live in `src/localization/messages.ts`; English source text is the fallback for missing keys.
+- Locale-dependent responses use private/no-store caching so one visitor's language is not cached for another.
+
 ## Styling
 
 - Tailwind CSS is integrated through `@tailwindcss/vite`.

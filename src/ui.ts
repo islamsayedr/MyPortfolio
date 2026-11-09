@@ -10,4 +10,4 @@ export const innerPageClass = `${containerClass} min-h-[75vh] pt-40 pb-[70px]`
 export const pageHeadingClass = 'm-0 font-display font-bold text-[clamp(40px,5vw,64px)] leading-[1.15] tracking-[-1px]'
 export const pageDescriptionClass = 'mt-[18px] max-w-[560px] text-muted leading-[1.8]'
 export const backLinkClass = `mb-6 inline-flex items-center gap-2 py-2 text-sm text-muted hover:text-accent ${focusClass}`
-export const animatedHeadingClass = "bg-[url('https://media.giphy.com/media/26BROrSHlmyzzHf3i/giphy.gif')] bg-cover bg-clip-text text-transparent font-display font-bold"
+export const animatedHeadingClass = "bg-ink bg-[url('/imgs/hero-text.gif')] bg-cover bg-clip-text text-transparent font-display font-bold motion-reduce:bg-none"

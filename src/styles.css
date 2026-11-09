@@ -1,4 +1,5 @@
 @import "tailwindcss" source("./");
+@import "@fontsource-variable/noto-sans-arabic";
 
 @font-face {
   font-family: Roboto;
@@ -22,8 +23,9 @@
 }
 
 @theme {
-  --font-sans: Roboto, Arial, sans-serif;
-  --font-display: Tiempos, Georgia, serif;
+  --font-sans: Roboto, "Noto Sans Arabic Variable", Arial, sans-serif;
+  --font-arabic: "Noto Sans Arabic Variable", Arial, sans-serif;
+  --font-display: Tiempos, "Noto Sans Arabic Variable", Georgia, serif;
   --color-ink: #060105;
   --color-muted: #606060;
   --color-paper: #f2f2f2;
