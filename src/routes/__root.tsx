@@ -29,7 +29,7 @@ function RootDocument() {
   return <LocalizationProvider state={state}>
     <html lang={info.intl} dir={info.direction} className="scroll-smooth motion-reduce:scroll-auto">
       <head><HeadContent /></head>
-      <body className="m-0 bg-paper font-sans text-base leading-normal text-ink rtl:font-arabic rtl:[&_:is(h1,h2,h3,blockquote,strong)]:font-arabic rtl:[&_:is(h1,h2,h3)]:tracking-normal"><Outlet /><Scripts /></body>
+      <body className="m-0 bg-paper font-sans text-base leading-normal text-ink rtl:font-arabic rtl:[&_:is(blockquote,strong)]:font-arabic rtl:[&_:is(h1,h2,h3)]:font-heading-arabic rtl:[&_:is(h1,h2,h3)]:font-black rtl:[&_:is(h1,h2,h3)]:tracking-normal"><Outlet /><Scripts /></body>
     </html>
   </LocalizationProvider>
 }

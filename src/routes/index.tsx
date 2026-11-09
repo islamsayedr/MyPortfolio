@@ -23,8 +23,8 @@ function HomePage() {
   const contactSocialClass = 'grid size-12 place-items-center bg-white text-xl text-accent shadow-[0_6px_24px_#0003] hover:bg-[#f8e6ed] focus-visible:outline-2 focus-visible:outline-white focus-visible:outline-offset-4'
   return <Page>
     <main>
-      <section className="flex min-h-svh flex-col items-center justify-center bg-[#e1e2e4] bg-[radial-gradient(ellipse_at_15%_25%,#8d013009,transparent_55%),radial-gradient(ellipse_at_90%_60%,#ffffffa6,transparent_55%)] px-6 pt-[98px] text-center">
-        <div className={`${containerClass} flex w-full flex-1 flex-col items-center justify-center py-7 md:w-[calc(100%_-_48px)] md:py-8`}>
+      <section className="relative isolate flex min-h-svh flex-col items-center justify-center bg-[#e1e2e4] bg-[radial-gradient(ellipse_at_15%_25%,#8d013009,transparent_55%),radial-gradient(ellipse_at_90%_60%,#ffffffa6,transparent_55%)] px-6 pt-[98px] text-center">
+        <div className={`${containerClass} relative z-1 flex w-full flex-1 flex-col items-center justify-center py-7 md:w-[calc(100%_-_48px)] md:py-8`}>
           <h1 className={`${animatedHeadingClass} m-0 px-[.18em] py-[.12em] text-[clamp(42px,9vw,64px)] leading-[1.15] tracking-[-1px] text-balance md:text-[clamp(48px,6.5vw,88px)] md:tracking-[-2px]`}>{t('Islam S.')}<br />{t('Product Designer')}</h1>
           <p className="mt-6 mb-[30px] text-base leading-[1.65] text-balance text-muted md:text-lg">{t('I turn complex ideas into thoughtful digital experiences.')}<br />{t('Designing products that put people first.')}</p>
           <div className="flex flex-wrap items-center justify-center gap-3">
@@ -33,7 +33,7 @@ function HomePage() {
             <a className={socialClass} href="https://t.me/islamsayedr" target="_blank" rel="noreferrer" aria-label="Telegram"><FaTelegramPlane aria-hidden="true" /></a>
           </div>
         </div>
-        <div className={`${containerClass} mt-auto flex w-full justify-center gap-2.5 border-t border-ink/10 py-5 md:w-[calc(100%_-_48px)] md:gap-[42px] md:pt-6 md:pb-7`}>
+        <div className={`${containerClass} relative z-1 mt-auto flex w-full justify-center gap-2.5 border-t border-ink/10 py-5 md:w-[calc(100%_-_48px)] md:gap-[42px] md:pt-6 md:pb-7`}>
           <Stat label={t('Designing')} value={t('Since {year}', { year: number(2017, { useGrouping: false }) })} />
           <Stat label={t('served')} value={t('{count} countries', { count: number(12, { signDisplay: 'always' }) })} />
           <Stat label={t('delivered')} value={t('{count} projects', { count: number(24, { signDisplay: 'always' }) })} />
