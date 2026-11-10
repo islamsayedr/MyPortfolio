@@ -2,16 +2,24 @@ import { createRootRoute, HeadContent, Outlet, Scripts } from '@tanstack/react-r
 import { LocalizationProvider } from '../localization'
 import { localeInfo, translate } from '../localization/locale'
 import { getLocalization } from '../localization/request.functions'
+import { getHeaderAccount } from '../auth/header.functions'
+import { isDashboardPath } from '../server/hosts'
 import '../styles.css'
 
 export const Route = createRootRoute({
-  loader: () => getLocalization(),
+  loader: async ({ location }) => {
+    const [localization, headerAccount] = await Promise.all([
+      getLocalization(),
+      getHeaderAccount({ data: { checkSession: !isDashboardPath(location.pathname) } }),
+    ])
+    return { ...localization, headerAccount }
+  },
   head: ({ loaderData }) => {
     const locale = loaderData?.locale ?? 'en-US'
     return {
       meta: [
         { charSet: 'utf-8' },
-        { name: 'viewport', content: 'width=device-width, initial-scale=1' },
+        { name: 'viewport', content: 'width=device-width, initial-scale=1, viewport-fit=cover' },
         { name: 'description', content: translate(locale, 'The portfolio of Islam Sayed, a product designer based in Egypt.') },
         { property: 'og:title', content: `${translate(locale, 'Islam Sayed')} | ${translate(locale, 'Product Designer')}` },
         { property: 'og:type', content: 'website' },

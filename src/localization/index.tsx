@@ -29,8 +29,9 @@ export function useLocale() {
   return value
 }
 
-export function LocaleSwitcher() {
-  const { locale, flag, label, t } = useLocale()
+export function LocaleSwitcher({ placement = 'bottom-end', labelClassName, className = '' }: { placement?: 'bottom-end' | 'top-start'; labelClassName?: string; className?: string }) {
+  const { locale, flag, label, intl, direction, t } = useLocale()
+  const labelled = labelClassName !== undefined
   const [open, setOpen] = useState(false)
   const root = useRef<HTMLDivElement>(null)
   const trigger = useRef<HTMLButtonElement>(null)
@@ -57,22 +58,23 @@ export function LocaleSwitcher() {
     window.location.reload()
   }
 
-  return <div className="relative inline-flex" ref={root} onKeyDown={event => {
+  return <div className={`relative inline-flex ${labelled ? 'w-full' : ''}`} ref={root} onKeyDown={event => {
     if (event.key === 'Escape' && open) {
       event.preventDefault()
       setOpen(false)
       trigger.current?.focus()
     }
   }}>
-    <button className={`grid size-8 cursor-pointer place-items-center border-0 bg-paper text-[17px] text-muted hover:bg-accent hover:text-paper ${focusClass}`} type="button" ref={trigger} aria-label={`${t('Language and region')}: ${label}`} aria-haspopup="menu" aria-expanded={open} aria-controls={open ? menuId : undefined} title={label} onClick={() => setOpen(value => !value)} onKeyDown={event => {
+    <button className={`${labelled ? 'flex min-h-11 w-full items-center gap-2.5 px-2.5 py-2 text-[13px] hover:bg-paper hover:text-accent md:min-h-10' : 'grid size-8 place-items-center bg-paper text-[17px] hover:bg-accent hover:text-paper'} cursor-pointer border-0 text-muted ${className} ${focusClass}`} type="button" ref={trigger} aria-label={`${t('Language and region')}: ${label}`} aria-haspopup="menu" aria-expanded={open} aria-controls={open ? menuId : undefined} title={label} onClick={() => setOpen(value => !value)} onKeyDown={event => {
       if (event.key === 'ArrowDown' || event.key === 'ArrowUp') {
         event.preventDefault()
         setOpen(true)
       }
     }}>
-      <img className="h-[18px] w-6 object-cover" src={flag} alt="" aria-hidden="true" />
+      <img className="h-[18px] w-6 shrink-0 object-cover" src={flag} alt="" aria-hidden="true" />
+      {labelled && <span className={`min-w-0 flex-1 truncate text-start ${labelClassName}`} lang={intl} dir={direction}>{label}</span>}
     </button>
-    {open && <div className="absolute end-0 top-full z-30 mt-2 w-[228px] border border-ink/10 bg-white p-1 shadow-lg" ref={menu} id={menuId} role="menu" aria-label={t('Language and region')} onKeyDown={event => {
+    {open && <div className={`absolute z-30 w-[228px] border border-ink/10 bg-white p-1 shadow-lg ${placement === 'top-start' ? 'start-0 bottom-full mb-2' : 'end-0 top-full mt-2'}`} ref={menu} id={menuId} role="menu" aria-label={t('Language and region')} onKeyDown={event => {
       const options = Array.from(menu.current?.querySelectorAll<HTMLButtonElement>('[role="menuitemradio"]') ?? [])
       const index = options.indexOf(document.activeElement as HTMLButtonElement)
       let next: number

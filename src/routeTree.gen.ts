@@ -11,9 +11,23 @@
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as AboutRouteImport } from './routes/about'
+import { Route as DashboardRouteImport } from './routes/dashboard'
 import { Route as ForDesignersRouteImport } from './routes/for-designers'
+import { Route as LoginRouteImport } from './routes/login'
 import { Route as ReviewsRouteImport } from './routes/reviews'
 import { Route as WorkRouteImport } from './routes/work'
+import { Route as AuthCallbackRouteImport } from './routes/auth.callback'
+import { Route as DashboardIndexRouteImport } from './routes/dashboard.index'
+import { Route as DashboardAccountRouteImport } from './routes/dashboard.account'
+import { Route as DashboardUsersRouteImport } from './routes/dashboard.users'
+import { Route as DashboardWorkRouteImport } from './routes/dashboard.work'
+import { Route as WorkIndexRouteImport } from './routes/work.index'
+import { Route as WorkProjectidRouteImport } from './routes/work.$projectid'
+import { Route as DashboardWorkIndexRouteImport } from './routes/dashboard.work.index'
+import { Route as DashboardWorkProjectidRouteImport } from './routes/dashboard.work.$projectid'
+import { Route as DashboardWorkNewRouteImport } from './routes/dashboard.work.new'
+import { Route as DashboardWorkProjectidIndexRouteImport } from './routes/dashboard.work.$projectid.index'
+import { Route as DashboardWorkProjectidEditRouteImport } from './routes/dashboard.work.$projectid.edit'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
@@ -25,9 +39,19 @@ const AboutRoute = AboutRouteImport.update({
   path: '/about',
   getParentRoute: () => rootRouteImport,
 } as any)
+const DashboardRoute = DashboardRouteImport.update({
+  id: '/dashboard',
+  path: '/dashboard',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const ForDesignersRoute = ForDesignersRouteImport.update({
   id: '/for-designers',
   path: '/for-designers',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const LoginRoute = LoginRouteImport.update({
+  id: '/login',
+  path: '/login',
   getParentRoute: () => rootRouteImport,
 } as any)
 const ReviewsRoute = ReviewsRouteImport.update({
@@ -40,43 +64,200 @@ const WorkRoute = WorkRouteImport.update({
   path: '/work',
   getParentRoute: () => rootRouteImport,
 } as any)
+const AuthCallbackRoute = AuthCallbackRouteImport.update({
+  id: '/auth/callback',
+  path: '/auth/callback',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const DashboardIndexRoute = DashboardIndexRouteImport.update({
+  id: '/',
+  path: '/',
+  getParentRoute: () => DashboardRoute,
+} as any)
+const DashboardAccountRoute = DashboardAccountRouteImport.update({
+  id: '/account',
+  path: '/account',
+  getParentRoute: () => DashboardRoute,
+} as any)
+const DashboardUsersRoute = DashboardUsersRouteImport.update({
+  id: '/users',
+  path: '/users',
+  getParentRoute: () => DashboardRoute,
+} as any)
+const DashboardWorkRoute = DashboardWorkRouteImport.update({
+  id: '/work',
+  path: '/work',
+  getParentRoute: () => DashboardRoute,
+} as any)
+const WorkIndexRoute = WorkIndexRouteImport.update({
+  id: '/',
+  path: '/',
+  getParentRoute: () => WorkRoute,
+} as any)
+const WorkProjectidRoute = WorkProjectidRouteImport.update({
+  id: '/$projectid',
+  path: '/$projectid',
+  getParentRoute: () => WorkRoute,
+} as any)
+const DashboardWorkIndexRoute = DashboardWorkIndexRouteImport.update({
+  id: '/',
+  path: '/',
+  getParentRoute: () => DashboardWorkRoute,
+} as any)
+const DashboardWorkProjectidRoute = DashboardWorkProjectidRouteImport.update({
+  id: '/$projectid',
+  path: '/$projectid',
+  getParentRoute: () => DashboardWorkRoute,
+} as any)
+const DashboardWorkNewRoute = DashboardWorkNewRouteImport.update({
+  id: '/new',
+  path: '/new',
+  getParentRoute: () => DashboardWorkRoute,
+} as any)
+const DashboardWorkProjectidIndexRoute =
+  DashboardWorkProjectidIndexRouteImport.update({
+    id: '/',
+    path: '/',
+    getParentRoute: () => DashboardWorkProjectidRoute,
+  } as any)
+const DashboardWorkProjectidEditRoute =
+  DashboardWorkProjectidEditRouteImport.update({
+    id: '/edit',
+    path: '/edit',
+    getParentRoute: () => DashboardWorkProjectidRoute,
+  } as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
+  '/dashboard': typeof DashboardRouteWithChildren
   '/for-designers': typeof ForDesignersRoute
+  '/login': typeof LoginRoute
   '/reviews': typeof ReviewsRoute
-  '/work': typeof WorkRoute
+  '/work': typeof WorkRouteWithChildren
+  '/auth/callback': typeof AuthCallbackRoute
+  '/dashboard/account': typeof DashboardAccountRoute
+  '/dashboard/users': typeof DashboardUsersRoute
+  '/dashboard/work': typeof DashboardWorkRouteWithChildren
+  '/work/$projectid': typeof WorkProjectidRoute
+  '/dashboard/': typeof DashboardIndexRoute
+  '/work/': typeof WorkIndexRoute
+  '/dashboard/work/$projectid': typeof DashboardWorkProjectidRouteWithChildren
+  '/dashboard/work/new': typeof DashboardWorkNewRoute
+  '/dashboard/work/': typeof DashboardWorkIndexRoute
+  '/dashboard/work/$projectid/edit': typeof DashboardWorkProjectidEditRoute
+  '/dashboard/work/$projectid/': typeof DashboardWorkProjectidIndexRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
   '/for-designers': typeof ForDesignersRoute
+  '/login': typeof LoginRoute
   '/reviews': typeof ReviewsRoute
-  '/work': typeof WorkRoute
+  '/auth/callback': typeof AuthCallbackRoute
+  '/dashboard/account': typeof DashboardAccountRoute
+  '/dashboard/users': typeof DashboardUsersRoute
+  '/work/$projectid': typeof WorkProjectidRoute
+  '/dashboard': typeof DashboardIndexRoute
+  '/work': typeof WorkIndexRoute
+  '/dashboard/work/new': typeof DashboardWorkNewRoute
+  '/dashboard/work': typeof DashboardWorkIndexRoute
+  '/dashboard/work/$projectid/edit': typeof DashboardWorkProjectidEditRoute
+  '/dashboard/work/$projectid': typeof DashboardWorkProjectidIndexRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
+  '/dashboard': typeof DashboardRouteWithChildren
   '/for-designers': typeof ForDesignersRoute
+  '/login': typeof LoginRoute
   '/reviews': typeof ReviewsRoute
-  '/work': typeof WorkRoute
+  '/work': typeof WorkRouteWithChildren
+  '/auth/callback': typeof AuthCallbackRoute
+  '/dashboard/account': typeof DashboardAccountRoute
+  '/dashboard/users': typeof DashboardUsersRoute
+  '/dashboard/work': typeof DashboardWorkRouteWithChildren
+  '/work/$projectid': typeof WorkProjectidRoute
+  '/dashboard/': typeof DashboardIndexRoute
+  '/work/': typeof WorkIndexRoute
+  '/dashboard/work/$projectid': typeof DashboardWorkProjectidRouteWithChildren
+  '/dashboard/work/new': typeof DashboardWorkNewRoute
+  '/dashboard/work/': typeof DashboardWorkIndexRoute
+  '/dashboard/work/$projectid/edit': typeof DashboardWorkProjectidEditRoute
+  '/dashboard/work/$projectid/': typeof DashboardWorkProjectidIndexRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/about' | '/for-designers' | '/reviews' | '/work'
+  fullPaths:
+    | '/'
+    | '/about'
+    | '/dashboard'
+    | '/for-designers'
+    | '/login'
+    | '/reviews'
+    | '/work'
+    | '/auth/callback'
+    | '/dashboard/account'
+    | '/dashboard/users'
+    | '/dashboard/work'
+    | '/work/$projectid'
+    | '/dashboard/'
+    | '/work/'
+    | '/dashboard/work/$projectid'
+    | '/dashboard/work/new'
+    | '/dashboard/work/'
+    | '/dashboard/work/$projectid/edit'
+    | '/dashboard/work/$projectid/'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/about' | '/for-designers' | '/reviews' | '/work'
-  id: '__root__' | '/' | '/about' | '/for-designers' | '/reviews' | '/work'
+  to:
+    | '/'
+    | '/about'
+    | '/for-designers'
+    | '/login'
+    | '/reviews'
+    | '/auth/callback'
+    | '/dashboard/account'
+    | '/dashboard/users'
+    | '/work/$projectid'
+    | '/dashboard'
+    | '/work'
+    | '/dashboard/work/new'
+    | '/dashboard/work'
+    | '/dashboard/work/$projectid/edit'
+    | '/dashboard/work/$projectid'
+  id:
+    | '__root__'
+    | '/'
+    | '/about'
+    | '/dashboard'
+    | '/for-designers'
+    | '/login'
+    | '/reviews'
+    | '/work'
+    | '/auth/callback'
+    | '/dashboard/account'
+    | '/dashboard/users'
+    | '/dashboard/work'
+    | '/work/$projectid'
+    | '/dashboard/'
+    | '/work/'
+    | '/dashboard/work/$projectid'
+    | '/dashboard/work/new'
+    | '/dashboard/work/'
+    | '/dashboard/work/$projectid/edit'
+    | '/dashboard/work/$projectid/'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   AboutRoute: typeof AboutRoute
+  DashboardRoute: typeof DashboardRouteWithChildren
   ForDesignersRoute: typeof ForDesignersRoute
+  LoginRoute: typeof LoginRoute
   ReviewsRoute: typeof ReviewsRoute
-  WorkRoute: typeof WorkRoute
+  WorkRoute: typeof WorkRouteWithChildren
+  AuthCallbackRoute: typeof AuthCallbackRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -95,11 +276,25 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof AboutRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/dashboard': {
+      id: '/dashboard'
+      path: '/dashboard'
+      fullPath: '/dashboard'
+      preLoaderRoute: typeof DashboardRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/for-designers': {
       id: '/for-designers'
       path: '/for-designers'
       fullPath: '/for-designers'
       preLoaderRoute: typeof ForDesignersRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/login': {
+      id: '/login'
+      path: '/login'
+      fullPath: '/login'
+      preLoaderRoute: typeof LoginRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/reviews': {
@@ -116,15 +311,164 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof WorkRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/auth/callback': {
+      id: '/auth/callback'
+      path: '/auth/callback'
+      fullPath: '/auth/callback'
+      preLoaderRoute: typeof AuthCallbackRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/dashboard/': {
+      id: '/dashboard/'
+      path: '/'
+      fullPath: '/dashboard/'
+      preLoaderRoute: typeof DashboardIndexRouteImport
+      parentRoute: typeof DashboardRoute
+    }
+    '/dashboard/account': {
+      id: '/dashboard/account'
+      path: '/account'
+      fullPath: '/dashboard/account'
+      preLoaderRoute: typeof DashboardAccountRouteImport
+      parentRoute: typeof DashboardRoute
+    }
+    '/dashboard/users': {
+      id: '/dashboard/users'
+      path: '/users'
+      fullPath: '/dashboard/users'
+      preLoaderRoute: typeof DashboardUsersRouteImport
+      parentRoute: typeof DashboardRoute
+    }
+    '/dashboard/work': {
+      id: '/dashboard/work'
+      path: '/work'
+      fullPath: '/dashboard/work'
+      preLoaderRoute: typeof DashboardWorkRouteImport
+      parentRoute: typeof DashboardRoute
+    }
+    '/work/': {
+      id: '/work/'
+      path: '/'
+      fullPath: '/work/'
+      preLoaderRoute: typeof WorkIndexRouteImport
+      parentRoute: typeof WorkRoute
+    }
+    '/work/$projectid': {
+      id: '/work/$projectid'
+      path: '/$projectid'
+      fullPath: '/work/$projectid'
+      preLoaderRoute: typeof WorkProjectidRouteImport
+      parentRoute: typeof WorkRoute
+    }
+    '/dashboard/work/': {
+      id: '/dashboard/work/'
+      path: '/'
+      fullPath: '/dashboard/work/'
+      preLoaderRoute: typeof DashboardWorkIndexRouteImport
+      parentRoute: typeof DashboardWorkRoute
+    }
+    '/dashboard/work/$projectid': {
+      id: '/dashboard/work/$projectid'
+      path: '/$projectid'
+      fullPath: '/dashboard/work/$projectid'
+      preLoaderRoute: typeof DashboardWorkProjectidRouteImport
+      parentRoute: typeof DashboardWorkRoute
+    }
+    '/dashboard/work/new': {
+      id: '/dashboard/work/new'
+      path: '/new'
+      fullPath: '/dashboard/work/new'
+      preLoaderRoute: typeof DashboardWorkNewRouteImport
+      parentRoute: typeof DashboardWorkRoute
+    }
+    '/dashboard/work/$projectid/': {
+      id: '/dashboard/work/$projectid/'
+      path: '/'
+      fullPath: '/dashboard/work/$projectid/'
+      preLoaderRoute: typeof DashboardWorkProjectidIndexRouteImport
+      parentRoute: typeof DashboardWorkProjectidRoute
+    }
+    '/dashboard/work/$projectid/edit': {
+      id: '/dashboard/work/$projectid/edit'
+      path: '/edit'
+      fullPath: '/dashboard/work/$projectid/edit'
+      preLoaderRoute: typeof DashboardWorkProjectidEditRouteImport
+      parentRoute: typeof DashboardWorkProjectidRoute
+    }
   }
 }
+
+interface DashboardWorkProjectidRouteChildren {
+  DashboardWorkProjectidEditRoute: typeof DashboardWorkProjectidEditRoute
+  DashboardWorkProjectidIndexRoute: typeof DashboardWorkProjectidIndexRoute
+}
+
+const DashboardWorkProjectidRouteChildren: DashboardWorkProjectidRouteChildren =
+  {
+    DashboardWorkProjectidEditRoute: DashboardWorkProjectidEditRoute,
+    DashboardWorkProjectidIndexRoute: DashboardWorkProjectidIndexRoute,
+  }
+
+const DashboardWorkProjectidRouteWithChildren =
+  DashboardWorkProjectidRoute._addFileChildren(
+    DashboardWorkProjectidRouteChildren,
+  )
+
+interface DashboardWorkRouteChildren {
+  DashboardWorkProjectidRoute: typeof DashboardWorkProjectidRouteWithChildren
+  DashboardWorkNewRoute: typeof DashboardWorkNewRoute
+  DashboardWorkIndexRoute: typeof DashboardWorkIndexRoute
+}
+
+const DashboardWorkRouteChildren: DashboardWorkRouteChildren = {
+  DashboardWorkProjectidRoute: DashboardWorkProjectidRouteWithChildren,
+  DashboardWorkNewRoute: DashboardWorkNewRoute,
+  DashboardWorkIndexRoute: DashboardWorkIndexRoute,
+}
+
+const DashboardWorkRouteWithChildren = DashboardWorkRoute._addFileChildren(
+  DashboardWorkRouteChildren,
+)
+
+interface DashboardRouteChildren {
+  DashboardAccountRoute: typeof DashboardAccountRoute
+  DashboardUsersRoute: typeof DashboardUsersRoute
+  DashboardWorkRoute: typeof DashboardWorkRouteWithChildren
+  DashboardIndexRoute: typeof DashboardIndexRoute
+}
+
+const DashboardRouteChildren: DashboardRouteChildren = {
+  DashboardAccountRoute: DashboardAccountRoute,
+  DashboardUsersRoute: DashboardUsersRoute,
+  DashboardWorkRoute: DashboardWorkRouteWithChildren,
+  DashboardIndexRoute: DashboardIndexRoute,
+}
+
+const DashboardRouteWithChildren = DashboardRoute._addFileChildren(
+  DashboardRouteChildren,
+)
+
+interface WorkRouteChildren {
+  WorkProjectidRoute: typeof WorkProjectidRoute
+  WorkIndexRoute: typeof WorkIndexRoute
+}
+
+const WorkRouteChildren: WorkRouteChildren = {
+  WorkProjectidRoute: WorkProjectidRoute,
+  WorkIndexRoute: WorkIndexRoute,
+}
+
+const WorkRouteWithChildren = WorkRoute._addFileChildren(WorkRouteChildren)
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   AboutRoute: AboutRoute,
+  DashboardRoute: DashboardRouteWithChildren,
   ForDesignersRoute: ForDesignersRoute,
+  LoginRoute: LoginRoute,
   ReviewsRoute: ReviewsRoute,
-  WorkRoute: WorkRoute,
+  WorkRoute: WorkRouteWithChildren,
+  AuthCallbackRoute: AuthCallbackRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)

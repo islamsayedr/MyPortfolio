@@ -4,11 +4,13 @@ import { FaLinkedinIn, FaTelegramPlane } from 'react-icons/fa'
 import { Carousel } from '../carousel'
 import { useLocale, localizedHead, localeFromMatches } from '../localization'
 import { Page } from '../components'
-import { projects, ProjectCard } from '../projects'
+import { ProjectCard } from '../projects'
+import { getPublishedWork } from '../work/public.functions'
+import type { Project } from '../work/types'
 import { testimonials, ReviewCard } from '../reviews'
 import { animatedHeadingClass, containerClass, focusClass, primaryButtonClass, sectionHeaderClass, sectionHeadingClass, viewMoreClass } from '../ui'
 
-export const Route = createFileRoute('/')({ component: HomePage, head: ({ matches }) => localizedHead(localeFromMatches(matches)) })
+export const Route = createFileRoute('/')({ loader: () => getPublishedWork(), component: HomePage, head: ({ matches }) => localizedHead(localeFromMatches(matches)) })
 
 const workflow = [
   { title: 'Discover', description: 'Understand your goals, your users, and the problem worth solving.' },
@@ -18,12 +20,16 @@ const workflow = [
 ]
 
 function HomePage() {
+  const work = Route.useLoaderData()
   const { t, number } = useLocale()
   const socialClass = `grid size-11 shrink-0 place-items-center bg-paper text-[17px] text-muted hover:bg-accent hover:text-paper ${focusClass}`
   const contactSocialClass = 'grid size-12 place-items-center bg-white text-xl text-accent shadow-[0_6px_24px_#0003] hover:bg-[#f8e6ed] focus-visible:outline-2 focus-visible:outline-white focus-visible:outline-offset-4'
   return <Page>
     <main>
-      <section className="relative isolate flex min-h-svh flex-col items-center justify-center bg-[#e1e2e4] bg-[radial-gradient(ellipse_at_15%_25%,#8d013009,transparent_55%),radial-gradient(ellipse_at_90%_60%,#ffffffa6,transparent_55%)] px-6 pt-[98px] text-center">
+      <section className="relative isolate flex min-h-[calc(100svh_-_64px_-_env(safe-area-inset-bottom,0px))] flex-col md:min-h-svh items-center justify-center bg-[#e1e2e4] bg-[radial-gradient(ellipse_at_15%_25%,#8d013009,transparent_55%),radial-gradient(ellipse_at_90%_60%,#ffffffa6,transparent_55%)] px-6 pt-[98px] text-center">
+        <div className="pointer-events-none absolute inset-0 z-0 overflow-hidden" aria-hidden="true">
+          <div className="absolute -inset-12 bg-[url('/imgs/hero-text.gif')] bg-cover bg-center opacity-[0.08] blur-[40px] motion-reduce:hidden" />
+        </div>
         <div className={`${containerClass} relative z-1 flex w-full flex-1 flex-col items-center justify-center py-7 md:w-[calc(100%_-_48px)] md:py-8`}>
           <h1 className={`${animatedHeadingClass} m-0 px-[.18em] py-[.12em] text-[clamp(42px,9vw,64px)] leading-[1.15] tracking-[-1px] text-balance md:text-[clamp(48px,6.5vw,88px)] md:tracking-[-2px]`}>{t('Islam S.')}<br />{t('Product Designer')}</h1>
           <p className="mt-6 mb-[30px] text-base leading-[1.65] text-balance text-muted md:text-lg">{t('I turn complex ideas into thoughtful digital experiences.')}<br />{t('Designing products that put people first.')}</p>
@@ -42,7 +48,7 @@ function HomePage() {
 
       <section className={`${containerClass} scroll-mt-[114px] py-16 md:py-24`} id="work" aria-labelledby="work-heading">
         <div className={sectionHeaderClass}><h2 className={sectionHeadingClass} id="work-heading">{t('Work samples')}</h2><Link className={viewMoreClass} to="/work">{t('View more')} <ArrowRightLinear className="rtl:rotate-180" size={18} aria-hidden="true" /></Link></div>
-        <WorkCarousel />
+        {work.unavailable ? <p className="text-sm text-muted">{t('Work is temporarily unavailable. Please try again later.')}</p> : <WorkCarousel projects={work.projects} />}
       </section>
 
       <section className="border-y border-ink/5 bg-linear-[180deg,#e3e3e366,#e3e3e333] py-16 md:py-24" aria-labelledby="workflow-heading">
@@ -78,7 +84,7 @@ function HomePage() {
   </Page>
 }
 
-function WorkCarousel() {
+function WorkCarousel({ projects }: { projects: Project[] }) {
   const { t } = useLocale()
   return <Carousel label={t('Work samples')} items={[...projects.map(project => ({
     label: project.title,

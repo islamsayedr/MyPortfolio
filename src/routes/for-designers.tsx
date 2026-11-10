@@ -8,7 +8,7 @@ export const Route = createFileRoute('/for-designers')({ component: DesignersPag
 function DesignersPage() {
   const { t } = useLocale()
   return <Page>
-    <main className="flex min-h-svh flex-col items-center justify-center px-6 pt-[130px] pb-8 text-center">
+    <main className="flex min-h-[calc(100svh_-_64px_-_env(safe-area-inset-bottom,0px))] flex-col md:min-h-svh items-center justify-center px-6 pt-[130px] pb-8 text-center">
       <p className="my-3 text-xs tracking-[1px] text-accent uppercase">{t('A new resource is in progress')}</p>
       <h1 className={`${animatedHeadingClass} m-0 text-[50px] leading-[1.15] md:text-[72px]`}>{t('Coming soon')}<span className="text-accent">.</span></h1>
       <p className="mt-[18px] mb-7 text-muted">{t('I am preparing practical resources and notes for designers. Check back soon.')}</p>

@@ -15,9 +15,12 @@ Routes:
 
 - `/` — portfolio home
 - `/work` — all portfolio projects
+- `/work/$projectid` — project details (for example `/work/couponz-souq`)
 - `/reviews` — all client reviews
 - `/about` — about and skills
 - `/for-designers` — coming soon page
+
+Dashboard routes share the main domain: `/login`, `/dashboard`, `/dashboard/account`, and admin-only `/dashboard/users` and `/dashboard/work` (portfolio CRUD, drafts, publishing, and display order). No dashboard subdomain is required. See [Dashboard setup](docs/dashboard.md) for Supabase migration, credentials, role security, and callback configuration.
 
 Build with `npm run build`, check TypeScript with `npm run typecheck`, and preview with `npm run start`.
 
@@ -70,6 +73,7 @@ The header language selector supports `en-US`, `en-UK`, `en-AU`, `ar-EG`, and `a
 - Arabic uses local Noto Sans Arabic fonts and RTL layouts, including mirrored timeline controls and carousel keyboard navigation. Brand/project names are preserved.
 - Catalogs and regional overrides live in `src/localization/messages.ts`; English source text is the fallback for missing keys.
 - Locale-dependent responses use private/no-store caching so one visitor's language is not cached for another.
+- Dashboard authentication and administration use the same locale provider and translated UI.
 
 ## Styling
 
