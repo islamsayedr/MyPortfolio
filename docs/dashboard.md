@@ -47,7 +47,7 @@ Never provide a role during signup. All new accounts are assigned `user` by a da
 
 After applying the accounts migration, apply **`supabase/migrations/202611100002_work_projects.sql`** in the SQL editor (or via the linked Supabase CLI). If accounts are already configured, apply only this new migration; do not rerun the accounts migration.
 
-The migration seeds the five existing projects, preserving their URLs and images. Administrators can manage projects at `/dashboard/work`. The list contains actions only; **New project** opens `/dashboard/work/new`, and **Edit** opens `/dashboard/work/PROJECT_UUID/edit`. Saving either form opens the saved-project preview at `/dashboard/work/PROJECT_UUID`. Preview routes use a stable internal UUID rather than the public slug, so changing the public URL does not break dashboard links. Previews share the public detail renderer, stay inside the dashboard shell, and display a draft/published notice. Both published and draft previews require a freshly verified administrator on the server; they are not shareable public draft links.
+The migration seeds the five existing projects and their images. Administrators can manage projects at `/dashboard/work`. The list contains actions only; **New project** opens `/dashboard/work/new`, and **Edit** opens `/dashboard/work/PROJECT_UUID/edit`. Saving either form opens the saved-project preview at `/dashboard/work/PROJECT_UUID`. Both public and dashboard project URLs use the stable database UUID; editing a title does not change either URL. Previews share the public detail renderer, stay inside the dashboard shell, and display a draft/published notice. Both published and draft previews require a freshly verified administrator on the server; they are not shareable public draft links.
 
 Localized, RTL-aware breadcrumbs appear in a full-width top bar with independent padding and a darker background, including the project title in preview/edit paths. Dashboard page headers/back links are omitted; screen-reader headings, useful status/action controls, and error notices remain. Public-site headers are unchanged. These route changes do not require an additional database migration.
 
@@ -55,12 +55,29 @@ The desktop sidebar can be resized from its outer edge (RTL-aware). The sidebar 
 
 Project management includes:
 
-- Create/edit title, URL slug, plain-text description, cover image URL/path, accessible image description, categories, and display order.
-- Save drafts, publish/unpublish projects, and permanently delete with confirmation.
+- Create/edit title, plain-text description, Markdown presentation, cover image URL/path, accessible image description, and categories. There is no slug input.
+- New projects are drafts. Editing preserves existing publish status and display order; these are no longer form inputs. Delete permanently with confirmation.
 - Lower display-order values appear first; ties use creation time and ID.
-- Changing the slug changes the public URL; old URLs do not redirect automatically.
+- Each card has a leading drag handle and a three-dot Preview/Edit/Delete menu. Use mouse/touch or focus the handle and press Space, then Up/Down and Space to drop (Escape cancels).
+- Public links use `/work/PROJECT_UUID`, matching the record's database ID. Title edits never regenerate identifiers.
 - Images use existing local paths or HTTPS URLs. File uploading/storage management is not implemented.
 - Content accepts Unicode and is shared across locales; the admin interface and existing category labels are localized.
+
+To enable saved drag-and-drop ordering, apply **`supabase/migrations/202611100003_work_reordering.sql`** after the first two migrations. Dragging reorders the current 20-project page, saves automatically, and preserves the relative order on other pages. The guarded RPC checks page membership and record versions, locks the table during its transaction, and normalizes display-order numbers atomically. A stale list or failed save restores the previous displayed order and reports an error; a missing RPC/migration is never treated as a successful save. No live database migration is applied automatically.
+
+### ID-based project URLs
+
+Apply **`supabase/migrations/202611100005_work_id_urls.sql`** before creating projects with the ID-based editor. Existing UUIDs and content are unchanged. New projects no longer require or write a slug. The old `slug` column is nullable and read-only to authenticated API clients, retained solely for **301 redirects** from previously shared, published URLs. Anonymous RLS protects legacy lookups too: draft/deleted aliases do not expose projects. Canonical cards, detail lookups, and public-page actions all use the database UUID. Before database setup, static sample UUIDs remain available; once connected, those sample URLs can redirect to the corresponding actual database records.
+
+### Markdown presentations
+
+Apply **`supabase/migrations/202611100004_work_presentation.sql`** to add the `presentation` text column and its explicit column-level write grants. It defaults to an empty string, so existing projects keep their current content. The existing published/admin RLS policies still apply. The database and server validate a maximum of 100,000 characters; Markdown indentation and line breaks are preserved.
+
+The edit page separates **Project info** and **Presentation** into keyboard-accessible, RTL-aware tabs. Unsaved changes and the live-preview state survive tab switching, and one Save action submits both panels. Validation reveals an invalid field's panel before focusing it. The new-project page retains its combined layout. The presentation panel has a **Presentation (Markdown)** field with an optional live preview. Saved dashboard previews and public detail pages use the same renderer. The engine is **Remarkable 2**, matching `../../msa7a/msa7a-desktop/`. Public rendering is deterministic and DOM-free: semantic HTML is included in the initial Workers SSR response, including when JavaScript is disabled. This makes the content available to crawlers; it does not guarantee search ranking improvements. The short description also supplies the detail page's meta description when present.
+
+Markdown supports headings, paragraphs, lists, images, links, tables, quotes and fenced code. Presentation headings start at H2 beneath the existing project H1. Raw HTML is escaped rather than enabled; unsafe URL protocols are blocked. Unlike the desktop app's browser-side sanitation, safety does not depend on `window` or `DOMParser`. Never bypass the shared renderer to insert source Markdown/HTML directly.
+
+Presentation bodies are fetched only for detail/edit/preview reads, not for the homepage, public work list or paginated admin cards. Blank presentations produce no additional section. Older databases can continue displaying existing content without this column, but must apply this migration before saving with the new editor.
 
 The homepage, work index, and project details read published database records through an anonymous server-side client. RLS independently hides drafts from visitors and members; only verified admins may write. Mutations are POST server functions with the existing CSRF protection. Updates and deletes match the last-read database timestamp to reject stale edits.
 

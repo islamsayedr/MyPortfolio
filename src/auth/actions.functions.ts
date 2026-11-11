@@ -46,6 +46,15 @@ export const updateProfile = createServerFn({ method: 'POST' }).validator(profil
   return { displayName: profile.display_name }
 })
 
+export const getUserCount = createServerFn({ method: 'GET' }).handler(async () => {
+  const { requireAdmin } = await import('./session.server')
+  const { client } = await requireAdmin()
+  try {
+    const { count, error } = await client.from('profiles').select('id', { count: 'exact', head: true })
+    return error ? null : count
+  } catch { return null }
+})
+
 export const getUsers = createServerFn({ method: 'GET' }).validator(userPageInput).handler(async ({ data }): Promise<UserPage> => {
   const { requireAdmin } = await import('./session.server')
   const { client } = await requireAdmin()

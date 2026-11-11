@@ -1,6 +1,7 @@
 import { useLocale } from '../localization'
 import { pageHeadingClass } from '../ui'
 import type { Project } from './types'
+import { Presentation } from './presentation'
 
 // The dashboard preview and public detail page render the same saved content.
 export function ProjectContent({ project, hideTitle = false }: { project: Project; hideTitle?: boolean }) {
@@ -12,5 +13,6 @@ export function ProjectContent({ project, hideTitle = false }: { project: Projec
     </header>
     {project.description && <p className="mb-8 max-w-3xl whitespace-pre-wrap break-words text-muted">{project.description}</p>}
     <img className="max-h-[85svh] w-full bg-[#e3e3e3] object-contain" src={project.image} alt={t(project.alt)} />
+    {project.presentation && <Presentation content={project.presentation} className="mt-10 md:mt-12" />}
   </>
 }

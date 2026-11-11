@@ -27,6 +27,7 @@ export type Database = {
     }
     Views: Record<never, never>
     Functions: {
+      reorder_work_projects: { Args: { page_index: number; project_ids: string[]; expected_versions: string[] }; Returns: undefined }
       set_user_role: { Args: { target_user_id: string; new_role: string }; Returns: undefined }
     }
     Enums: Record<never, never>

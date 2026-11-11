@@ -1,19 +1,28 @@
-import { createFileRoute, Link, notFound } from '@tanstack/react-router'
+import { createFileRoute, Link, notFound, redirect } from '@tanstack/react-router'
 import { ArrowLeftLinear } from 'solar-icon-set'
 import { Page } from '../components'
 import { useLocale, localizedHead, localeFromMatches } from '../localization'
-import { getPublishedProject } from '../work/public.functions'
+import { getLegacyProjectId, getPublishedProject } from '../work/public.functions'
+import { legacyProjectKey, workId } from '../work/validation'
 import { ProjectContent } from '../work/project-content'
 import { backLinkClass, innerPageClass, pageHeadingClass, primaryButtonClass } from '../ui'
 
 export const Route = createFileRoute('/work/$projectid')({
   loader: async ({ params }) => {
-    if (!/^[a-z0-9]+(?:-[a-z0-9]+)*$/.test(params.projectid) || params.projectid.length > 100) throw notFound()
-    const result = await getPublishedProject({ data: params.projectid })
-    if (!result.project && !result.unavailable) throw notFound()
-    return result
+    let id: string | null = null
+    try { id = workId(params.projectid) } catch { /* Check read-only legacy aliases below. */ }
+    if (id) {
+      const result = await getPublishedProject({ data: id })
+      if (result.project && result.project.id !== params.projectid) throw redirect({ to: '/work/$projectid', params: { projectid: result.project.id }, statusCode: 301 })
+      if (result.project || result.unavailable) return result
+    }
+    try { legacyProjectKey(params.projectid) } catch { throw notFound() }
+    const legacy = await getLegacyProjectId({ data: params.projectid })
+    if (legacy.unavailable) return { project: null, unavailable: true }
+    if (legacy.id && legacy.id !== params.projectid) throw redirect({ to: '/work/$projectid', params: { projectid: legacy.id }, statusCode: 301 })
+    throw notFound()
   },
-  head: ({ loaderData, matches }) => localizedHead(localeFromMatches(matches), loaderData?.project?.title ?? 'Project not found'),
+  head: ({ loaderData, matches }) => localizedHead(localeFromMatches(matches), loaderData?.project?.title ?? 'Project not found', loaderData?.project?.description.replace(/\s+/g, ' ').trim().slice(0, 160) || undefined),
   component: ProjectPage,
   notFoundComponent: ProjectNotFound,
 })

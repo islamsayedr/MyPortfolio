@@ -20,7 +20,7 @@ function ProjectPreviewPage() {
       <span className={`border border-ink/10 px-3 py-2 text-xs ${project.published ? 'text-accent' : 'text-muted'}`}>{t(project.published ? 'Published' : 'Draft')}</span>
       <div className="flex flex-wrap gap-2">
         <Link className={actionClass} to="/dashboard/work/$projectid/edit" params={{ projectid: project.id }}>{t('Edit project')}</Link>
-        {project.published && <a className={actionClass} href={`/work/${project.slug}`} target="_blank" rel="noreferrer">{t('View public page')}</a>}
+        {project.published && <a className={actionClass} href={`/work/${project.id}`} target="_blank" rel="noreferrer">{t('View public page')}</a>}
       </div>
     </div>
     {!project.published && <p className="mb-6 text-xs text-muted" role="note">{t('This is a private draft preview. It is not visible on the public website.')}</p>}

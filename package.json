@@ -17,6 +17,9 @@
     "cf-typegen": "wrangler types"
   },
   "dependencies": {
+    "@dnd-kit/core": "^6.3.1",
+    "@dnd-kit/sortable": "^10.0.0",
+    "@dnd-kit/utilities": "^3.2.2",
     "@fontsource-variable/noto-sans-arabic": "^5.3.0",
     "@supabase/ssr": "^0.12.7",
     "@supabase/supabase-js": "^2.119.0",
@@ -25,6 +28,7 @@
     "react": "latest",
     "react-dom": "latest",
     "react-icons": "^5.7.0",
+    "remarkable": "^2.0.1",
     "solar-icon-set": "^2.0.1"
   },
   "devDependencies": {
@@ -35,6 +39,7 @@
     "@types/node": "^22.20.5",
     "@types/react": "^19.3.0",
     "@types/react-dom": "^19.3.0",
+    "@types/remarkable": "^2.0.8",
     "@vitejs/plugin-react": "latest",
     "tailwindcss": "^4.3.5",
     "tsx": "^4.23.15",
